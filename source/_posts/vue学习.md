@@ -1,28 +1,28 @@
-## vue学习:
+#### vue学习:
 
-#### 	1:基本知识：
+##### 	基本知识：
 
-​		-{{}}--文本或数据显示的地方，里面只运行js代码，纯js代码也可以运行。
+​		-\{{\}}---文本或数据显示的地方，里面只运行js代码，纯js代码也可以运行。
 
  		-标签有的指令： 
 
-​				 >v-html--可以显示数据中带有标签的，标签内的部分部分。标签内按照样式显示。
+​				 -v-html---可以显示数据中带有标签的，标签内的部分部分。标签内按照样式显示。
 
-​				 >v-text--把标签也输出，也没有相应的标签效果。
+​				 -v-text---把标签也输出，也没有相应的标签效果。
 
 ​		-v-show=”定义的值“ 值是布尔值 控制一个值的隐藏或显示  。
 
 ​		- v-if=”定义的值“ 值时boolean 节点的动态创建和删除。
 
-​				>动态切换class的方式，三目写法，对象写法，数组写法（可以任意的切换）	
+​				-动态切换class的方式，三目写法，对象写法，数组写法（可以任意的切换）	
 
-​				>v-bind=‘值’ 动态切换class （isActive？‘red’：‘yellow’）buttom中写@click=‘handleClick（）’ 然后在methods中写入click的方法。 **bind和click要结合使用**
+​				-v-bind=‘值’ 动态切换class （isActive？‘red’：‘yellow’）buttom中写@click=‘handleClick（）’ 然后在methods中写入click的方法。 **bind和click要结合使用**
 
  	 	-列表渲染：v-for 循环渲染数据。有index，key值
 
-   			 >key:必要值。跟踪每个节点的身份，重用和重新排序现有的元素。key="data.id" //理想的key值，每一项都有id
+   			 -key:必要值。跟踪每个节点的身份，重用和重新排序现有的元素。key="data.id" //理想的key值，每一项都有id
 
-​				>v-for，在数组中结合computed/methods计算来控制数组数据的变换。
+​				-v-for，在数组中结合computed/methods计算来控制数组数据的变换。
 
 ​		-传值：使用prop将数据传输到组件中。（尝试自己写组件TODOlist）
 
