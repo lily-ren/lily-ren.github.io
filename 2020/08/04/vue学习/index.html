@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue学习:基本知识：​        -&lt;!–￼0–&gt;—文本或数据显示的地方，里面只运行js代码，纯js代码也可以运行。      -标签有的指令：  ​                 -v-html—可以显示数据中带有标签的，标签内的部分部分。标签内按照样式显示。 ​                 -v-text—把标签也输出，也没有相应的标签效果。 ​        -v-s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2020/08/04/vue%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vue学习:基本知识：​        -&lt;!–￼0–&gt;—文本或数据显示的地方，里面只运行js代码，纯js代码也可以运行。      -标签有的指令：  ​                 -v-html—可以显示数据中带有标签的，标签内的部分部分。标签内按照样式显示。 ​                 -v-text—把标签也输出，也没有相应的标签效果。 ​        -v-s">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-04T12:10:45.529Z">
+<meta property="article:modified_time" content="2020-08-04T12:10:45.529Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/04/vue%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="vue学习"><a href="#vue学习" class="headerlink" title="vue学习:"></a>vue学习:</h4><h5 id="基本知识："><a href="#基本知识：" class="headerlink" title="基本知识："></a>基本知识：</h5><p>​        -&lt;!–￼0–&gt;—文本或数据显示的地方，里面只运行js代码，纯js代码也可以运行。</p>
+<pre><code>     -标签有的指令： </code></pre>
+<p>​                 -v-html—可以显示数据中带有标签的，标签内的部分部分。标签内按照样式显示。</p>
+<p>​                 -v-text—把标签也输出，也没有相应的标签效果。</p>
+<p>​        -v-show=”定义的值“ 值是布尔值 控制一个值的隐藏或显示  。</p>
+<p>​        - v-if=”定义的值“ 值时boolean 节点的动态创建和删除。</p>
+<p>​                -动态切换class的方式，三目写法，对象写法，数组写法（可以任意的切换）    </p>
+<p>​                -v-bind=‘值’ 动态切换class （isActive？‘red’：‘yellow’）buttom中写@click=‘handleClick（）’ 然后在methods中写入click的方法。 <strong>bind和click要结合使用</strong></p>
+<pre><code>      -列表渲染：v-for 循环渲染数据。有index，key值
+
+            -key:必要值。跟踪每个节点的身份，重用和重新排序现有的元素。key=&quot;data.id&quot; //理想的key值，每一项都有id</code></pre>
+<p>​                -v-for，在数组中结合computed/methods计算来控制数组数据的变换。</p>
+<p>​        -传值：使用prop将数据传输到组件中。（尝试自己写组件TODOlist）</p>
+<p>​        数组更新检测：</p>
+<p>​            1：使用一下方法操作数组，可以检测变动。</p>
+<p>​                push，pop，shift，unshift，splice，sort，reverse</p>
+<p>​            2：新数组替换老数组。</p>
+<p>​                filter，concat，slice，map</p>
+<p>​    -在组件中：data必须是一个函数，</p>
+<p>​    事件处理：</p>
+<p>​        1：@click=”事件“（函数写不写括号，主要是要看需不需要传输数据。）在methods中写响应事件所对应的方法（函数），然后当监听到事件发生改变时就可以运行了。</p>
+<p>​        2：click会产生冒泡现象，所以原生使用stoPropogation来阻止。vue中有.stop的事件修饰符，用来阻止冒泡。.prevent阻止事件跳转。.self事件只有自己才可以触发。.once只能执行一次的事件修饰符。   </p>
+<p>​        3：按键修饰符： @keyup.enter (后者是我们想要设置的特殊键值)</p>
+<p>​        4：在内联语句处理器中访问原始的dom节点，可以用特殊变量$event传入方法内。</p>
+<p>​        5：事件修饰符：事件+.事件修饰符 能更好的处理事件的细节。.stop-阻阻止事件冒泡.prevent-拦截默认事件.capture-事件变为捕获.self-只在自己范围内触发.once-只触发一次.passive-不拦截默认事件。（要注意修饰符的顺序）</p>
+<p>​        6：按键修饰符：.enter.tab.delete.esc.space.up.down.left.right(就是添加一些特殊的键值)</p>
+<p>​        7:系统修饰符：.ctrl.alt.shift.meta-对应着mac上的cmd键。.exact–可以和前面的串联，表示只有某个特殊按键的时候才会触发。</p>
+<p>​        8：鼠标修饰符：.left.right.middle</p>
+<p>​    双向绑定：v-model，通常和表单一起使用。</p>
+<p>​        -vue中的v-model和v-bind：</p>
+<p>​            -v-model是双向绑定,即表单可以拿到vue中的数据,表单中的数据也可以传到vue中。</p>
+<p>​            -v-bind:value 只能是表单拿到vue的数据,vue无法拿到表单的数据。</p>
+<p>​        -修饰符：.lazy–可以控制v-model绑定的数据在change事件之后同步.number–可以直接将输入的值转换成数值类型(通用).trim–可以自动过滤收尾的空白字符。</p>
+<p>​    -动态组件：v-bind:is=“属性”(这个属性包括：已注册组件的名字/一个组件的选项对象)</p>
+<h5 id="组件注册："><a href="#组件注册：" class="headerlink" title="组件注册："></a>组件注册：</h5><p>-组件名：推荐使用糖葫芦写法，驼峰也是可以的。</p>
+<p>-全局注册：Vue.cmponent()注册的组件可以使用在new Vue()创建出来的根实例中。 </p>
+<p>-局部注册：var 组件1={}来定义组件，然后在new Vue实例中可以通过components:{‘组件名’：组件1}来定义。*局部注册的组件在其子组件中不可用。想要使用的话，只能在模块系统中局部注册-&gt;import 组件 from ‘vue文件中’ export default{ components:{ 组件1，组件2 } }</p>
+<p>​    -？？？在想要只使用基础组件中的一部分时，可以使用require.context只全局注册这些非常通用的基础组件。可以在应用的入口文件（src/main.js）中全局导入基础组件。</p>
+<h5 id="prop："><a href="#prop：" class="headerlink" title="prop："></a>prop：</h5><p>-命名：使用驼峰写法</p>
+<p>-类型：props:[‘字符串1’，‘字符串2’…] 但最好是是能够以对象的形式列出prop(值：类型)</p>
+<p>-传值：任何一个类型的值都可以传递给一个prop，</p>
+<p>-单向数据流：父级prop的更新会向下流到子组件中，</p>
+<p>-使用：在父组件中通过v-bind定义一个值。在子组件的vue实例中定义该属性，并把值设为目标属性的数字即可。这样子组件就能接受到父组件中的属性值向下流下来的数据。</p>
+<p>-验证：为了验证prop中属性传来的值的类型是否正确。验证失败时会产生一个控制台的警告。</p>
+<p>-非prop的attribute？？</p>
+<h5 id="emit："><a href="#emit：" class="headerlink" title="$emit："></a>$emit：</h5><p>-事件名：推荐是用糖葫芦写法。</p>
+<p>-作用：子组件使用它来触发父组件的自定义事件。$emit(event,arg)</p>
+<p>-使用：父组件 v-bind=“属性” 子组件 prop来接受父组件传来的数据。子组件监听了一个事件来来触发父组件中的事件。(子组件的事件触发，来接连触发父组件的事件。)</p>
+<h5 id="："><a href="#：" class="headerlink" title="："></a><slot>：</h5><p>-就是给组件中挖了一个坑，只要在组件的模板中写入了<slot></slot>,那么组件在渲染的时候，写插槽的地方将会被替换为html中组件内写的内容。如果没有，那么中间的内容都会被抛弃。(就像是一个立体的空心积木)</p>
+<p>-是子组件中提供给父组件使用的一个占位符，父组件可以向里面填充任何的内容。</p>
+<p>-具名插槽：有名字的插槽，因为一个子组件中可以加入很多个插槽，为了能区分它们，就有了它。子-<slot name='header'> 父-<template v-slot:header> 使用v-slot来连接子中插槽。</p>
+<p>-默认插槽：没有命名的就是默认插槽，但是前提是子中有<slot> 父中有传值</p>
+<p>-作用域插槽：带参数的插槽，子组件提供给父组件一个仅用于插槽中的参数，父组件就可以通过不同的方式展示和填充内容。？？</p>
+<h5 id="渲染函数："><a href="#渲染函数：" class="headerlink" title="渲染函数："></a>渲染函数：</h5><h5 id="单文件组件："><a href="#单文件组件：" class="headerlink" title="单文件组件："></a>单文件组件：</h5><p>-扩展名：.vue。</p>
+<p>-其中，css可以使用预处理器来构建。</p>
+<p>前面学到的是vue2，好上手，但是实际应用中要用vue全家桶(vue全家桶：vue-cli，vue-router，vue-resource，vuex) vue-cli:脚手架，相当于是启动了一个请求服务器，把环境搭建好了，只要开发就行。</p>
+<p>脚手架的使用：</p>
+<p>​    1：先安装一个全局webpack。npm install webpack -g。再安装一个全局的vue-cli。 npm install -g vue-cli.</p>
+<p>​    2:cd 进一个要放项目的文件夹 直接创建一个.vue文件。vue create + 项目名。(vue 3.X以上使用，2.x就用npm install webpack + 项目名)</p>
+<p>​    3：安装相应的依赖。npm install</p>
+<p>​    4:起项目。npm run start （也可以显式的指定入口文件。不太会）</p>
+<p>vue引入公共样式的三种方式：</p>
+<p>​    1：入口main.js中引入。  import  from  </p>
+<p>​    2：在index.html中引入。</p>
+<p>​    3：直接在app.vue中引用，但在index.html的head上空出一个<style></p>
+<p>vue组件父子传值的4种方法:props，ref,emit,模板传递通信slot</p>
+<p>​    -props：</p>
+<p>​        静态传值就是直接通过props来传递。</p>
+<p>​        动态传值是通过v-bind来绑定一个要传递值的key，然后后面跟要传递的内容，不过这个内容是可以改变的</p>
+<p>​    -slot：父组件在使用子组件的同时并向其中传值。</p>
+<p>·vue里的ref（$ref）:</p>
+<p>​    1、ref 加在普通的元素上，用this.ref.name 获取到的是dom元素</p>
+<p>　　 2、ref 加在子组件上，用this.ref.name 获取到的是组件实例，可以使用组件的所有方法。</p>
+<p>　  3、如何利用 v-for 和 ref 获取一组数组或者dom 节点</p>
+<p>·prop 着重于数据的传递，它并不能调用子组件里的属性和方法。像创建文章组件时，自定义标题和内容这样的使用场景，最适合使用prop。</p>
+<p>·$ref 着重于索引，主要用来调用子组件里的属性和方法，其实并不擅长数据传递。而且ref用在dom元素的时候，能使到选择器的作用，这个功能比作为索引更常有用到。</p>
+<p>ref  $refs:</p>
+<p>​    ·ref指定了某个dom节点。（相当于是一个字符串型的索引值）</p>
+<p>​    ·refs是所有ref的集合。</p>
+<p>​    ·ref和v-for一起使用时，获取的引用会是一个数组，</p>
+<p>–html中 ref=”profile”</p>
+<p>–组件中  child = perent.$refs.profile(child是perent中所有dom节点的集合，标识就是profile)</p>
+<p>表单验证：validate()</p>
+<p>​    p=this.$refs.form.validate()  submit过来的从上面传来的表单值，是否有效，p.then.</p>
+<h5 id="vue-router："><a href="#vue-router：" class="headerlink" title="vue-router："></a>vue-router：</h5><p>-使用：结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。</p>
+<p>-步骤：</p>
+<p>1：定义路由或者从别处引入，<script src="./vue-router.js"></script>。</p>
+<p>2:准备路由所需要的组件。(能够跳转的块)。</p>
+<p>3：创建路由对象，在对象中配置路由规则 var routes=new VueRouter({ path:’/foo’,component:Foo })。(这三个值是必备的)</p>
+<p>4：在vue中注入路由。vue实例中，加入一个router。</p>
+<p>5：通过<router-view></router-view>挖坑，路径匹配到的组件都会渲染到这个组件来。</p>
+<p>6：路由通过<router-link to="相应路由的path">跳转，这个被渲染后会变成a标签，值的前面会变成一个#，从而变成锚点。(链接的一种，就是在<a name="xxx" href="#hello">这就是在特定的xxx的地方设置了一个锚点。)</p>
+<h5 id="路由参数："><a href="#路由参数：" class="headerlink" title="路由参数："></a>路由参数：</h5><p>-router传递参数：使用上面的那个router-link</p>
+<p>-接受参数：</p>
+<p>​    -组件接收：在html中获取路由参数, 通过$route.params.参数名</p>
+<p><code>var productType = Vue.component(&#39;productType&#39;,&#123;</code><br>    <code>//在html中获取路由参数, 通过$route.params.参数名</code><br>    <code>template:&#39;&lt;div&gt;这里显示商品编号&#123;&#123;$route.params.id&#125;&#125;&lt;/div&gt;&#39;,</code><br><code>&#125;)</code></p>
+<p>​    -js接收：在js中获取路由参数, 通过this.$route.params.参数名</p>
+<p><code>var productType = Vue.component(&#39;productType&#39;,&#123;</code><br>    <code>//在html中获取路由参数, 通过$route.params.参数名</code><br>    <code>template:&#39;&lt;div&gt;这里显示商品编号&#123;&#123;$route.params.id&#125;&#125;&lt;/div&gt;&#39;,</code><br>    <code>//模板编译完成之后调用</code><br>    <code>mounted() &#123;</code><br>        <code>//在js中获取路由参数, 通过this.$route.params.参数名</code><br>        <code>console.log(this.$route.params.id)</code><br>    <code>&#125;,</code><br><code>&#125;)</code></p>
+<p>-响应路由的参数变化：</p>
+<h5 id="vuex："><a href="#vuex：" class="headerlink" title="vuex："></a>vuex：</h5><p>-专门为vue.js开发的状态管理模式，集中管理所有组件的状态</p>
+<p>Q:1：v-model绑定，循环渲染的时候value怎么设置。</p>
+<p>2：ref，prop的具体区别，实际使用的时候呢</p>
+<p>3:fx-cascader中的数据怎么传</p>
+<p>4:为什么有时候按钮不触发事件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/04/vue%E5%AD%A6%E4%B9%A0/" data-id="ckdfwiks30009y2r7dyqj0uwa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/08/04/npm%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/04/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/04/CSS%E5%9F%BA%E7%A1%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/04/dom%E5%92%8Cbom/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/04/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/04/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/04/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
