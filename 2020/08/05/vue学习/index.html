@@ -10,12 +10,12 @@
   <meta name="description" content="vue学习:基本知识：​        -&lt;!–￼0–&gt;—文本或数据显示的地方，里面只运行js代码，纯js代码也可以运行。      -标签有的指令：  ​                 -v-html—可以显示数据中带有标签的，标签内的部分部分。标签内按照样式显示。 ​                 -v-text—把标签也输出，也没有相应的标签效果。 ​        -v-s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2020/08/04/vue%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/08/05/vue%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="vue学习:基本知识：​        -&lt;!–￼0–&gt;—文本或数据显示的地方，里面只运行js代码，纯js代码也可以运行。      -标签有的指令：  ​                 -v-html—可以显示数据中带有标签的，标签内的部分部分。标签内按照样式显示。 ​                 -v-text—把标签也输出，也没有相应的标签效果。 ​        -v-s">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-04T12:10:45.529Z">
-<meta property="article:modified_time" content="2020-08-04T12:10:45.529Z">
+<meta property="article:published_time" content="2020-08-05T11:51:40.013Z">
+<meta property="article:modified_time" content="2020-08-05T11:51:40.013Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -68,8 +68,8 @@
       <div class="outer">
         <section id="main"><article id="post-vue学习" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/04/vue%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+    <a href="/2020/08/05/vue%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2020-08-05T11:51:40.013Z" itemprop="datePublished">2020-08-05</time>
 </a>
     
   </div>
@@ -131,7 +131,8 @@
 <p>-具名插槽：有名字的插槽，因为一个子组件中可以加入很多个插槽，为了能区分它们，就有了它。子-<slot name='header'> 父-<template v-slot:header> 使用v-slot来连接子中插槽。</p>
 <p>-默认插槽：没有命名的就是默认插槽，但是前提是子中有<slot> 父中有传值</p>
 <p>-作用域插槽：带参数的插槽，子组件提供给父组件一个仅用于插槽中的参数，父组件就可以通过不同的方式展示和填充内容。？？</p>
-<h5 id="渲染函数："><a href="#渲染函数：" class="headerlink" title="渲染函数："></a>渲染函数：</h5><h5 id="单文件组件："><a href="#单文件组件：" class="headerlink" title="单文件组件："></a>单文件组件：</h5><p>-扩展名：.vue。</p>
+<h5 id="渲染函数："><a href="#渲染函数：" class="headerlink" title="渲染函数："></a>渲染函数：</h5><h5 id="单文件组件："><a href="#单文件组件：" class="headerlink" title="单文件组件："></a>单文件组件：</h5><p>-SPA：单页Web应用。特点：在前后端分离的基础上加了一层前端路由</p>
+<p>-扩展名：.vue。</p>
 <p>-其中，css可以使用预处理器来构建。</p>
 <p>前面学到的是vue2，好上手，但是实际应用中要用vue全家桶(vue全家桶：vue-cli，vue-router，vue-resource，vuex) vue-cli:脚手架，相当于是启动了一个请求服务器，把环境搭建好了，只要开发就行。</p>
 <p>脚手架的使用：</p>
@@ -162,7 +163,16 @@
 <p>–组件中  child = perent.$refs.profile(child是perent中所有dom节点的集合，标识就是profile)</p>
 <p>表单验证：validate()</p>
 <p>​    p=this.$refs.form.validate()  submit过来的从上面传来的表单值，是否有效，p.then.</p>
-<h5 id="vue-router："><a href="#vue-router：" class="headerlink" title="vue-router："></a>vue-router：</h5><p>-使用：结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。</p>
+<h5 id="vue-router："><a href="#vue-router：" class="headerlink" title="vue-router："></a>vue-router：</h5><p>-核心：改变url，但是页面不进行整体的刷新。</p>
+<p>-路由规则：hash和history</p>
+<p>​    -hash：#=锚点，本质是改变window.location的href属性。可以直接赋值location.hash改变href，但页面不刷新。</p>
+<p>​    -history：可以改变url而不刷新页面。</p>
+<p>​        -history.pushState()：类似栈，有进有出</p>
+<p>​        -history.replaceState()：替换url，没有退回</p>
+<p>​        -history.back()</p>
+<p>​        -history.forward()</p>
+<p>​        -history.go(num)</p>
+<p>-使用：结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。</p>
 <p>-步骤：</p>
 <p>1：定义路由或者从别处引入，<script src="./vue-router.js"></script>。</p>
 <p>2:准备路由所需要的组件。(能够跳转的块)。</p>
@@ -186,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/vue%E5%AD%A6%E4%B9%A0/" data-id="ckdfwiks30009y2r7dyqj0uwa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/05/vue%E5%AD%A6%E4%B9%A0/" data-id="ckdhb9vam000939rcbssn8urn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -195,7 +205,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/08/04/npm%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/05/npm%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -205,7 +215,7 @@
     </a>
   
   
-    <a href="/2020/08/04/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/08/05/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title"></div>
     </a>
@@ -244,23 +254,23 @@
       <ul>
         
           <li>
-            <a href="/2020/08/04/CSS%E5%9F%BA%E7%A1%80/">(no title)</a>
+            <a href="/2020/08/05/CSS%E5%9F%BA%E7%A1%80/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/04/dom%E5%92%8Cbom/">(no title)</a>
+            <a href="/2020/08/05/dom%E5%92%8Cbom/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/04/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">(no title)</a>
+            <a href="/2020/08/05/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/04/hello-world/">Hello World</a>
+            <a href="/2020/08/05/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2020/08/04/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">(no title)</a>
+            <a href="/2020/08/05/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">(no title)</a>
           </li>
         
       </ul>

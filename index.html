@@ -66,8 +66,8 @@
   
     <article id="post-CSS基础" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/04/CSS%E5%9F%BA%E7%A1%80/" class="article-date">
-  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+    <a href="/2020/08/05/CSS%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2020-08-05T11:51:40.013Z" itemprop="datePublished">2020-08-05</time>
 </a>
     
   </div>
@@ -107,10 +107,19 @@
 <p>布局：    </p>
 <p>-flex布局：只要设置display：flex</p>
 <p>​    -一些属性：flex-direction-盒子的排列方向，flex-wrap-控制是否换行（这两个可以合并使用一个flex-flow）justify-content-盒子内元素在横轴方向上的对齐方式，align-items-多行的flex容器，在纵轴上的对齐方式（这两个可以合并使用一个align-contant）</p>
-<p>​    -flex项目属性(对一个小格子的控制)：order：数字-用来个盒子进行编号。flex-grow：flex-shrink-项目在多余的空间中如何放大缩小。flex-basis：指定项目的初始大小。align-self：控制单个项目沿着纵轴上的方向。</p>
+<p>​    -flex项目属性(对一个小格子的控制)：order：数字-用来个盒子进行编号。flex-grow：默认值是0，多余空间不分配。flex-shrink：默认值是1，空间不足要分配。他两的作用：项目在多余的空间中如何放大缩小。flex-basis：默认值是auto，指定项目的初始大小。(在一个flex中可以设置前面三个值。)align-self：控制单个项目沿着纵轴上的方向。</p>
+<p>​    -上面三个属性的默认值就是说，一个flex在改变屏幕扩大时不会缩小，扩大时会扩大，但是以上操作都是可auto调节的。</p>
+<p>​    -盒子的尺寸优先级是：最大最小尺寸限制(min-width/max-width) &gt; 弹性增长或收缩 (flex-grow/flex-shrink)&gt; 基础尺寸(flex-base/width/box-sizing共同决定)。*但是在flex布局中，flex-basis的优先级比width高。值都会把width的值覆盖。flex-basis和width在缩小时效果是相同的，但是如果是扩大的话，width就是固定的了，不会是可以拉伸的。</p>
+<p>在contant-box上 flex-basis和width的作用是一样的，如果设置成border-box的话，用width就会缩小。</p>
+<p>​    -父元素display：flex </p>
+<p>​        -子元素flex:auto 这样设置的相应的块就会自动拉伸占满一条屏幕。</p>
+<p>​        -flex:none 就会撑爆整条屏幕。</p>
 <p>-grid布局：设置display：grid</p>
 <p>​    -属性：grid-template-columns-一个grid的横向上的宽，grid-template-rows-竖向上的高，(可以随意的控制格子的大小)。 grid-column-以竖向划分。如果是3*3的区域，那么column的数量就有4个，grid的竖向对个格子的大小进行划分，从start开始，到end结束，(1/4–从第一根开始到第四根结束。)grid-row-以横向划分，其余均同上。</p>
 <h5 id="预处理语言-less："><a href="#预处理语言-less：" class="headerlink" title="预处理语言-less："></a>预处理语言-less：</h5><p>-在vue框架中添加scoped属性，表示该style标签所包含的样式仅仅作用于当前的vue组件，这样不会产生样式的全局污染。lang标签则是规定了使用哪种css预处理语言。</p>
+<p>-初始起步：</p>
+<p>​    -less的安装：npm install <a href="mailto:&#x6c;&#x65;&#x73;&#x73;&#45;&#x6c;&#x6f;&#97;&#x64;&#101;&#x72;&#64;&#x34;&#x2e;&#x31;&#x2e;&#48;">&#x6c;&#x65;&#x73;&#x73;&#45;&#x6c;&#x6f;&#97;&#x64;&#101;&#x72;&#64;&#x34;&#x2e;&#x31;&#x2e;&#48;</a> –save(less的版本过高会出现问题，vue项目就无法启动) 安装后使用 lessc-v 检查是否安装成功。</p>
+<p>​    -less的引用：普通使用：将官网中的说明引入即可。vue项目中：import less from ’less‘  vue.use(less);   style设置lang=’less‘。</p>
 <p>-less在css语言的基础上增加了，变量，混合(mixin)，函数等功能。</p>
 <p>-格式：@变量名：值</p>
 <p>-混合：将一组属性从一个规则集包含到另一个规则集中。.class{style…}  使用–.class1{ style… ;  .class(); }，这样，class1就可以使用class的样式。</p>
@@ -125,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/CSS%E5%9F%BA%E7%A1%80/" data-id="ckdfwikrr0000y2r785kc6t3d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/05/CSS%E5%9F%BA%E7%A1%80/" data-id="ckdhb9vaa000039rchf4lg6w0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -137,8 +146,8 @@
   
     <article id="post-dom和bom" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/04/dom%E5%92%8Cbom/" class="article-date">
-  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+    <a href="/2020/08/05/dom%E5%92%8Cbom/" class="article-date">
+  <time datetime="2020-08-05T11:51:40.013Z" itemprop="datePublished">2020-08-05</time>
 </a>
     
   </div>
@@ -247,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/dom%E5%92%8Cbom/" data-id="ckdfwikrv0001y2r7dqgk2rey" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/05/dom%E5%92%8Cbom/" data-id="ckdhb9vae000139rcdxp0hiiw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,8 +268,8 @@
   
     <article id="post-git基础操作" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/04/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="article-date">
-  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+    <a href="/2020/08/05/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2020-08-05T11:51:40.013Z" itemprop="datePublished">2020-08-05</time>
 </a>
     
   </div>
@@ -282,9 +291,9 @@
 <p>​    git reflog     查看每条历史命令</p>
 <p>​    git restore 文件名     丢弃工作区的改动</p>
 <p>​    git reset HEAD 文件名     把暂存区的修改撤销掉，重新放回工作区</p>
-<p>​    git remote add origin <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x2e;&#x63;&#111;&#x6d;</a>:我的github账户名/远程上要用的空仓库名.git     把本地仓库的内容推送到GitHub仓库</p>
-<p>​    git clone <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#x2e;&#99;&#111;&#x6d;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#x2e;&#99;&#111;&#x6d;</a>:我的github账户名/远程上要用的仓库名.git     把远程库克隆到本地库</p>
-<p>​    git remote set-url origin <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#x2e;&#99;&#x6f;&#109;">&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#x2e;&#99;&#x6f;&#109;</a>:新地址/仓库.git     更改远程仓库新指向</p>
+<p>​    git remote add origin <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#46;&#99;&#x6f;&#x6d;</a>:我的github账户名/远程上要用的空仓库名.git     把本地仓库的内容推送到GitHub仓库</p>
+<p>​    git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#105;&#116;&#46;&#x63;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#103;&#105;&#116;&#46;&#x63;&#111;&#x6d;</a>:我的github账户名/远程上要用的仓库名.git     把远程库克隆到本地库</p>
+<p>​    git remote set-url origin <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#x69;&#116;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#105;&#116;&#64;&#103;&#x69;&#116;&#x2e;&#x63;&#x6f;&#x6d;</a>:新地址/仓库.git     更改远程仓库新指向</p>
 <p>​    git push     把本地库的内容推送到远程</p>
 <p>​    git push 远程主机名 本地分支名:远程分支名     把本地分支的内容推送到远程指定分支</p>
 <p>​    git checkout -b 分支名     创建分支并切换</p>
@@ -299,7 +308,7 @@
 <p>  git merge FETCH_HEAD    //将拉取下来的最新内容合并到当前所在的分支中</p>
 <p>​    git merge 分支名     合并分支上的内容到本地来</p>
 <p>​    注：拉取后也要push，时刻铭记远程-本地-远程的原则</p>
-<h4 id="开发步骤："><a href="#开发步骤：" class="headerlink" title="开发步骤："></a>开发步骤：</h4><p>​    1：克隆代码     git clone <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#46;&#99;&#x6f;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#46;&#99;&#x6f;&#109;</a>:我的github账户名/远程上要用的仓库名.git</p>
+<h4 id="开发步骤："><a href="#开发步骤：" class="headerlink" title="开发步骤："></a>开发步骤：</h4><p>​    1：克隆代码     git clone <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#116;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#116;&#x2e;&#99;&#111;&#x6d;</a>:我的github账户名/远程上要用的仓库名.git</p>
 <p>​    2：查看所有分支     git branch –all </p>
 <p>​    3：创建本地新的dev分支     git branch 分支名   #创建本地分支</p>
 <p>​    4：发布dev分支     git push origin dev:dev  #同步dev分支的代码到远程服务器，这样远程仓库也有一个dev分支了。</p>
@@ -331,7 +340,7 @@
 <p>​      git中用HEAD表示当前版本，HEAD^上一个版本，HEAD^^上上个版本；版本号写前几位就可以</p>
 <p>  7:删除文本：git rm + 文件名   恢复是？？？checkout 为什么没有用</p>
 <p>  8:创建公钥</p>
-<p>  9:在github上创建一个远程库，然后使用git remote add origin <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a>:用户名/仓库名.git</p>
+<p>  9:在github上创建一个远程库，然后使用git remote add origin <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#109;">&#103;&#105;&#116;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#109;</a>:用户名/仓库名.git</p>
 <p>  与远程的仓库链接。      第一次再使用git push -u origin master，把前面推进仓库的文件发送到远程仓库去。</p>
 <p>*master是git为我们自动创建的第一条分支。</p>
 <p>*nvm alias default 8.12.0 //设置默认的node版本（以后都不用改的那种）</p>
@@ -339,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" data-id="ckdfwikrx0002y2r7439e93kf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/05/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" data-id="ckdhb9vag000239rc2rdx37n2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -351,8 +360,8 @@
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/04/hello-world/" class="article-date">
-  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+    <a href="/2020/08/05/hello-world/" class="article-date">
+  <time datetime="2020-08-05T11:51:40.013Z" itemprop="datePublished">2020-08-05</time>
 </a>
     
   </div>
@@ -363,7 +372,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/04/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/08/05/hello-world/">Hello World</a>
     </h1>
   
 
@@ -388,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/hello-world/" data-id="ckdfwikry0003y2r7dwjzdvr7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/05/hello-world/" data-id="ckdhb9vah000339rcgt4whl8v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -400,8 +409,8 @@
   
     <article id="post-js数据结构" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/04/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="article-date">
-  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+    <a href="/2020/08/05/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="article-date">
+  <time datetime="2020-08-05T11:51:40.013Z" itemprop="datePublished">2020-08-05</time>
 </a>
     
   </div>
@@ -429,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" data-id="ckdfwikrz0004y2r74d5l2gh2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/05/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" data-id="ckdhb9vai000439rcc39mf3xi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -441,8 +450,8 @@
   
     <article id="post-linux指令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/04/linux%E6%8C%87%E4%BB%A4/" class="article-date">
-  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+    <a href="/2020/08/05/linux%E6%8C%87%E4%BB%A4/" class="article-date">
+  <time datetime="2020-08-05T11:51:40.013Z" itemprop="datePublished">2020-08-05</time>
 </a>
     
   </div>
@@ -499,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/linux%E6%8C%87%E4%BB%A4/" data-id="ckdfwiks00005y2r72pxbfpc3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/05/linux%E6%8C%87%E4%BB%A4/" data-id="ckdhb9vai000539rc3wrzd6g4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -511,8 +520,8 @@
   
     <article id="post-md的使用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/04/md%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+    <a href="/2020/08/05/md%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2020-08-05T11:51:40.013Z" itemprop="datePublished">2020-08-05</time>
 </a>
     
   </div>
@@ -543,7 +552,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/md%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="ckdfwiks10006y2r74hw3glax" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/05/md%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="ckdhb9vaj000639rc9msd5o4y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -555,8 +564,8 @@
   
     <article id="post-npm学习" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/04/npm%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+    <a href="/2020/08/05/npm%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2020-08-05T11:51:40.013Z" itemprop="datePublished">2020-08-05</time>
 </a>
     
   </div>
@@ -605,7 +614,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/npm%E5%AD%A6%E4%B9%A0/" data-id="ckdfwiks20008y2r789w5grjk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/05/npm%E5%AD%A6%E4%B9%A0/" data-id="ckdhb9val000839rc4erjdl6m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -617,8 +626,8 @@
   
     <article id="post-vue学习" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/04/vue%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+    <a href="/2020/08/05/vue%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2020-08-05T11:51:40.013Z" itemprop="datePublished">2020-08-05</time>
 </a>
     
   </div>
@@ -680,7 +689,8 @@
 <p>-具名插槽：有名字的插槽，因为一个子组件中可以加入很多个插槽，为了能区分它们，就有了它。子-<slot name='header'> 父-<template v-slot:header> 使用v-slot来连接子中插槽。</p>
 <p>-默认插槽：没有命名的就是默认插槽，但是前提是子中有<slot> 父中有传值</p>
 <p>-作用域插槽：带参数的插槽，子组件提供给父组件一个仅用于插槽中的参数，父组件就可以通过不同的方式展示和填充内容。？？</p>
-<h5 id="渲染函数："><a href="#渲染函数：" class="headerlink" title="渲染函数："></a>渲染函数：</h5><h5 id="单文件组件："><a href="#单文件组件：" class="headerlink" title="单文件组件："></a>单文件组件：</h5><p>-扩展名：.vue。</p>
+<h5 id="渲染函数："><a href="#渲染函数：" class="headerlink" title="渲染函数："></a>渲染函数：</h5><h5 id="单文件组件："><a href="#单文件组件：" class="headerlink" title="单文件组件："></a>单文件组件：</h5><p>-SPA：单页Web应用。特点：在前后端分离的基础上加了一层前端路由</p>
+<p>-扩展名：.vue。</p>
 <p>-其中，css可以使用预处理器来构建。</p>
 <p>前面学到的是vue2，好上手，但是实际应用中要用vue全家桶(vue全家桶：vue-cli，vue-router，vue-resource，vuex) vue-cli:脚手架，相当于是启动了一个请求服务器，把环境搭建好了，只要开发就行。</p>
 <p>脚手架的使用：</p>
@@ -711,7 +721,16 @@
 <p>–组件中  child = perent.$refs.profile(child是perent中所有dom节点的集合，标识就是profile)</p>
 <p>表单验证：validate()</p>
 <p>​    p=this.$refs.form.validate()  submit过来的从上面传来的表单值，是否有效，p.then.</p>
-<h5 id="vue-router："><a href="#vue-router：" class="headerlink" title="vue-router："></a>vue-router：</h5><p>-使用：结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。</p>
+<h5 id="vue-router："><a href="#vue-router：" class="headerlink" title="vue-router："></a>vue-router：</h5><p>-核心：改变url，但是页面不进行整体的刷新。</p>
+<p>-路由规则：hash和history</p>
+<p>​    -hash：#=锚点，本质是改变window.location的href属性。可以直接赋值location.hash改变href，但页面不刷新。</p>
+<p>​    -history：可以改变url而不刷新页面。</p>
+<p>​        -history.pushState()：类似栈，有进有出</p>
+<p>​        -history.replaceState()：替换url，没有退回</p>
+<p>​        -history.back()</p>
+<p>​        -history.forward()</p>
+<p>​        -history.go(num)</p>
+<p>-使用：结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。</p>
 <p>-步骤：</p>
 <p>1：定义路由或者从别处引入，<script src="./vue-router.js"></script>。</p>
 <p>2:准备路由所需要的组件。(能够跳转的块)。</p>
@@ -735,7 +754,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/vue%E5%AD%A6%E4%B9%A0/" data-id="ckdfwiks30009y2r7dyqj0uwa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/05/vue%E5%AD%A6%E4%B9%A0/" data-id="ckdhb9vam000939rcbssn8urn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -747,8 +766,8 @@
   
     <article id="post-快捷键记录" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/04/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" class="article-date">
-  <time datetime="2020-08-04T12:10:45.529Z" itemprop="datePublished">2020-08-04</time>
+    <a href="/2020/08/05/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time datetime="2020-08-05T11:51:40.013Z" itemprop="datePublished">2020-08-05</time>
 </a>
     
   </div>
@@ -763,7 +782,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/04/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" data-id="ckdfwiks4000ay2r73ijzaudg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/05/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" data-id="ckdhb9van000a39rc5if1gb8t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -809,23 +828,23 @@
       <ul>
         
           <li>
-            <a href="/2020/08/04/CSS%E5%9F%BA%E7%A1%80/">(no title)</a>
+            <a href="/2020/08/05/CSS%E5%9F%BA%E7%A1%80/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/04/dom%E5%92%8Cbom/">(no title)</a>
+            <a href="/2020/08/05/dom%E5%92%8Cbom/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/04/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">(no title)</a>
+            <a href="/2020/08/05/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/04/hello-world/">Hello World</a>
+            <a href="/2020/08/05/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2020/08/04/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">(no title)</a>
+            <a href="/2020/08/05/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">(no title)</a>
           </li>
         
       </ul>
