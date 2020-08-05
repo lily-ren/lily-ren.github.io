@@ -130,6 +130,8 @@
 
 ##### 单文件组件：
 
+-SPA：单页Web应用。特点：在前后端分离的基础上加了一层前端路由
+
 -扩展名：.vue。
 
 -其中，css可以使用预处理器来构建。
@@ -209,6 +211,24 @@ ref  $refs:
 ​    p=this.$refs.form.validate()  submit过来的从上面传来的表单值，是否有效，p.then.
 
 ##### vue-router：
+
+-核心：改变url，但是页面不进行整体的刷新。
+
+-路由规则：hash和history
+
+​	-hash：#=锚点，本质是改变window.location的href属性。可以直接赋值location.hash改变href，但页面不刷新。
+
+​	-history：可以改变url而不刷新页面。
+
+​		-history.pushState()：类似栈，有进有出
+
+​		-history.replaceState()：替换url，没有退回
+
+​		-history.back()
+
+​		-history.forward()
+
+​		-history.go(num)
 
 -使用：结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。
 

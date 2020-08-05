@@ -62,7 +62,19 @@
 
 ​	-一些属性：flex-direction-盒子的排列方向，flex-wrap-控制是否换行（这两个可以合并使用一个flex-flow）justify-content-盒子内元素在横轴方向上的对齐方式，align-items-多行的flex容器，在纵轴上的对齐方式（这两个可以合并使用一个align-contant）
 
-​	-flex项目属性(对一个小格子的控制)：order：数字-用来个盒子进行编号。flex-grow：flex-shrink-项目在多余的空间中如何放大缩小。flex-basis：指定项目的初始大小。align-self：控制单个项目沿着纵轴上的方向。
+​	-flex项目属性(对一个小格子的控制)：order：数字-用来个盒子进行编号。flex-grow：默认值是0，多余空间不分配。flex-shrink：默认值是1，空间不足要分配。他两的作用：项目在多余的空间中如何放大缩小。flex-basis：默认值是auto，指定项目的初始大小。(在一个flex中可以设置前面三个值。)align-self：控制单个项目沿着纵轴上的方向。
+
+​	-上面三个属性的默认值就是说，一个flex在改变屏幕扩大时不会缩小，扩大时会扩大，但是以上操作都是可auto调节的。
+
+​	-盒子的尺寸优先级是：最大最小尺寸限制(min-width/max-width) > 弹性增长或收缩 (flex-grow/flex-shrink)> 基础尺寸(flex-base/width/box-sizing共同决定)。*但是在flex布局中，flex-basis的优先级比width高。值都会把width的值覆盖。flex-basis和width在缩小时效果是相同的，但是如果是扩大的话，width就是固定的了，不会是可以拉伸的。
+
+在contant-box上 flex-basis和width的作用是一样的，如果设置成border-box的话，用width就会缩小。
+
+​	-父元素display：flex 
+
+​		-子元素flex:auto 这样设置的相应的块就会自动拉伸占满一条屏幕。
+
+​		-flex:none 就会撑爆整条屏幕。
 
 -grid布局：设置display：grid
 
@@ -75,6 +87,12 @@
 ##### 预处理语言-less：
 
 -在vue框架中添加scoped属性，表示该style标签所包含的样式仅仅作用于当前的vue组件，这样不会产生样式的全局污染。lang标签则是规定了使用哪种css预处理语言。
+
+-初始起步：
+
+​	-less的安装：npm install less-loader@4.1.0 --save(less的版本过高会出现问题，vue项目就无法启动) 安装后使用 lessc-v 检查是否安装成功。
+
+​	-less的引用：普通使用：将官网中的说明引入即可。vue项目中：import less from ’less‘  vue.use(less);   style设置lang=’less‘。
 
 -less在css语言的基础上增加了，变量，混合(mixin)，函数等功能。
 
