@@ -246,6 +246,20 @@ ref  $refs:
 
 6：路由通过<router-link to="相应路由的path">跳转，这个被渲染后会变成a标签，值的前面会变成一个#，从而变成锚点。(链接的一种，就是在<a name="xxx" href="#hello">这就是在特定的xxx的地方设置了一个锚点。)
 
+
+
+-实际操作：
+
+​	1：在组件目录下写spa，然后在router目录下使用import引入之前写的spa(使用相对路径(相对路径：./文件名表示在当前目录下。))
+
+​	2：在router目录中的index.js，的下面写入相应的路由，按照给定的模板写。引入时要注意new router的地址。import .. from 'new router的地方'(给的模板中设置的name是用在嵌套路由上的。)
+
+​	3：在main.js中import相应的router
+
+​	4：在app.vue中加入<router-link>来定义页面中点击触发部分(定义当点击后去到的地方)<router-view>来在页面中显示。
+
+​	5:添加重定向和单独配置路由
+
 ##### 路由参数：
 
 -router传递参数：使用上面的那个router-link

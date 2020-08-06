@@ -104,7 +104,7 @@
 
 `.clearfix {  display: block;  zoom: 1;   &:after {    content: " ";    display: block;    font-size: 0;    height: 0;    clear: both;    visibility: hidden;  } }`
 
--嵌套：就是把可以复用的样式写在一起，格式---#最外层的块{ 样式... .下面的class{ class自己的样式 }}
+-嵌套：就是把可以复用的样式写在一起，格式---#最外层的块{ 样式... .下面的class{ class自己的样式 }} *注意：嵌套是采用冒泡的方式，就是内层会被外层所影响。
 
 ​	@规则可以和选择器以相同的方式进行嵌套
 
@@ -113,6 +113,12 @@
 -运算&函数：运算--可以做四则，属性和颜色的运算。calc()不进行运算，但在嵌套函数中，会计算变量和数学公式的值。？？？
 
 -转义：允许你使用任意字符串作为属性或变量值。格式---@变量名：~“字符串”，编译后都会原样输出。
+
+-命名空间和访问符：在写的一个class中，嵌套着他所要使用的伪类 .class{ ... &:after{ ... }}(&-就是class的名字)
+
+-映射：(很有意思)可以将混合和规则集作为一组值的映射
+
+`\#colors() {  primary: blue;  secondary: green; } .button {  color: #colors[primary];  border: 1px solid #colors[secondary]; }`
 
 
 
