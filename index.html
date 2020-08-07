@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-git基础操作" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-快捷键记录" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/06/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="article-date">
-  <time datetime="2020-08-06T11:21:52.957Z" itemprop="datePublished">2020-08-06</time>
+    <a href="/2020/08/07/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time datetime="2020-08-07T15:58:53.373Z" itemprop="datePublished">2020-08-07</time>
 </a>
     
   </div>
@@ -76,77 +76,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>​    git     查看是否存在及版本  </p>
-<p>​    git init     把目录变成github可以管理的仓库</p>
-<p>​    git add 文件名     把工作区的文件添加到github仓库的暂存区</p>
-<p>​    git commit -m “本次提交说明”     把暂存区的文件提交给分支。可add多次再一次commit     一步到位：git commit -am “本次提交说明”</p>
-<p>​    git status     查看仓库状态</p>
-<p>​    git diff 文件名     查看与上次提交的有什么不同 （Mac上一般使用vscode或者 sourceTree来查看版本的不同。）</p>
-<p>​    git log     显示从最近到最远的提交历史</p>
-<p>​    git log –pretty=oneline     显示从最近到最远的提交日志的版本号</p>
-<p>​    git log –graph     看到分支合并图</p>
-<p>​    git reset –hard HEAD^或commit_id     git中用HEAD表示当前版本，HEAD^上一个版本，HEAD^^上上个版本；版本号写前几位就可以</p>
-<p>​    git reflog     查看每条历史命令</p>
-<p>​    git restore 文件名     丢弃工作区的改动</p>
-<p>​    git reset HEAD 文件名     把暂存区的修改撤销掉，重新放回工作区</p>
-<p>​    git remote add origin <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#x2e;&#x63;&#x6f;&#x6d;</a>:我的github账户名/远程上要用的空仓库名.git     把本地仓库的内容推送到GitHub仓库</p>
-<p>​    git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#46;&#99;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#46;&#99;&#111;&#x6d;</a>:我的github账户名/远程上要用的仓库名.git     把远程库克隆到本地库</p>
-<p>​    git remote set-url origin <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#46;&#x63;&#111;&#x6d;">&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#46;&#x63;&#111;&#x6d;</a>:新地址/仓库.git     更改远程仓库新指向</p>
-<p>​    git push     把本地库的内容推送到远程</p>
-<p>​    git push 远程主机名 本地分支名:远程分支名     把本地分支的内容推送到远程指定分支</p>
-<p>​    git checkout -b 分支名     创建分支并切换</p>
-<p>​    git switch -c 分支名     创建分支并切换。相当于git branch 分支名（创建分支） + git checkout 分支名（切换分支）/ git switch 分支名</p>
-<p>​    git branch     查看当前分支  -a显示所有分支  -r显示远程分支  -d删除分支  -D 强行删除分支</p>
-<p>​    git merge 分支名     合并指定分支（写的分支名）到当前分支</p>
-<p>​    git branch -d 分支名     删除制定分支（写的分支名）</p>
-<p>​    git fetch 远程主机名      将某个远程主机的更新全部取回本地</p>
-<p>​    git fetch 远程主机名 分支名     只想取回特定分支的更新</p>
-<p>​    git pull 远程主机名 远程分支名:本地分支名     将远程主机的某个分支的更新取回，并与本地指定的分支合并（如果远程分支是与当前分支合并，则冒号后面的部分可以省略）</p>
-<p>​    git pull相当于  git fetch origin master   //从远程主机的master分支拉取最新内容</p>
-<p>  git merge FETCH_HEAD    //将拉取下来的最新内容合并到当前所在的分支中</p>
-<p>​    git merge 分支名     合并分支上的内容到本地来</p>
-<p>​    注：拉取后也要push，时刻铭记远程-本地-远程的原则</p>
-<h4 id="开发步骤："><a href="#开发步骤：" class="headerlink" title="开发步骤："></a>开发步骤：</h4><p>​    1：克隆代码     git clone <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#46;&#99;&#111;&#109;">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#46;&#99;&#111;&#109;</a>:我的github账户名/远程上要用的仓库名.git</p>
-<p>​    2：查看所有分支     git branch –all </p>
-<p>​    3：创建本地新的dev分支     git branch 分支名   #创建本地分支</p>
-<p>​    4：发布dev分支     git push origin dev:dev  #同步dev分支的代码到远程服务器，这样远程仓库也有一个dev分支了。</p>
-<p>​    5：在dev分支开发代码</p>
-<p>​      git checkout dev  # 切换到dev分支进行开发</p>
-<p>​      # 开发代码之后，我们有两个选择</p>
-<p>​      # 第一个：如果功能开发完成了，可以合并主分支</p>
-<p>​      git checkout master  # 切换到主分支</p>
-<p>​      git merge dev  # 把dev分支的更改和master合并</p>
-<p>​      git push  # 提交主分支代码远程</p>
-<p>​      git checkout dev  # 切换到dev远程分支</p>
-<p>​      git push  # 提交dev分支到远程</p>
-<p>​      # 第二个：如果功能没有完成，可以直接推送</p>
-<p>​      git push  # 提交到dev远程分支</p>
-<p>​      # 注意：在分支切换之前最好先commit全部的改变，除非你真的知道自己在做什么。</p>
-<p>​    6：删除分支</p>
-<p>​      git push origin :dev  # 删除远程dev分支，危险命令哦</p>
-<p>​      # 下面两条是删除本地分支</p>
-<p>​      git checkout master  # 切换到master分支</p>
-<p>​      git branch -d dev  # 删除本地dev分支</p>
-<h4 id="新建自己的git仓库："><a href="#新建自己的git仓库：" class="headerlink" title="新建自己的git仓库："></a>新建自己的git仓库：</h4><p>  1：mkdir 文件名 –  创建新文件  cd去到当前文件的路径下，使用pwd检查文件路径。</p>
-<p>  2：初始化  当前路径下 git init 把当前目录变成git可以管理的仓库</p>
-<p>  3：添加文件   使用git add + 文件名，将文件添加到仓库。（添加到仓库的暂存区）</p>
-<p>​     提交文件   使用git commit -m +文件提交情况说明，将文件提交到仓库。。可add(将文件添加到暂存区中)多次再一次commit（提交到分支上）     一步到位：git commit -am “本次提交说明”</p>
-<p>  4:查看修改状况   git status  如果有更改，会显示 modified</p>
-<p>​      不记得修改了哪里，就可以使用source tree来查看对比上次提交修改了哪些地方。 </p>
-<p>  5:版本检查：source tree中的分支可以直接查看提交的版本。（git log）</p>
-<p>  6:文件版本退回：git reset –        退回后，新加的版本就没有了，但是可以通过hard找回  git reset –hard HEAD  （指向当前版本）</p>
-<p>​      git中用HEAD表示当前版本，HEAD^上一个版本，HEAD^^上上个版本；版本号写前几位就可以</p>
-<p>  7:删除文本：git rm + 文件名   恢复是？？？checkout 为什么没有用</p>
-<p>  8:创建公钥</p>
-<p>  9:在github上创建一个远程库，然后使用git remote add origin <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>:用户名/仓库名.git</p>
-<p>  与远程的仓库链接。      第一次再使用git push -u origin master，把前面推进仓库的文件发送到远程仓库去。</p>
-<p>*master是git为我们自动创建的第一条分支。</p>
-<p>*nvm alias default 8.12.0 //设置默认的node版本（以后都不用改的那种）</p>
+        <p>替换：command+option+f<br>查找：command+f<br>加单行注释：command+/<br>块注释：option+shift+a<br>快速查找：command+p    +&gt;可以使用响应的插件<br>一次选择多个相同项：command+d<br>格式化代码：control+k，control+d<br>在vscode中调出终端：control+·（esc下面的那个）(好像有一些配置)</p>
+<p>相关插件：<br>    beautiful-美化代码<br>    code runner-运行任何一种语言<br>    chinese-中文<br>    debugger for chrome-调试代码，塞断点用。在luanch中修改url到相应的地址<br>    eslint-检测代码是否完整 需要全局安装，和初始化<br>    git相关：<br>        git history<br>        git project manager<br>        gitconfig syntax<br>        gitlens-可以显示代码最近的仓库</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" data-id="ckdipnf11000332wg5tox2s1w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/07/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" data-id="ckdkezj7j000a2fnmasj2a1tn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -156,59 +92,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-浏览器调试技巧" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/06/hello-world/" class="article-date">
-  <time datetime="2020-08-06T11:21:52.957Z" itemprop="datePublished">2020-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/hello-world/" data-id="ckdipnf12000432wgamnrhbkw" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js数据结构" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/06/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="article-date">
-  <time datetime="2020-08-06T11:21:52.957Z" itemprop="datePublished">2020-08-06</time>
+    <a href="/2020/08/07/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/" class="article-date">
+  <time datetime="2020-08-07T15:58:53.373Z" itemprop="datePublished">2020-08-07</time>
 </a>
     
   </div>
@@ -217,202 +104,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h2><h5 id="方法："><a href="#方法：" class="headerlink" title="-方法："></a>-方法：</h5><p>​    -splice(index,number)/(start,end,添加的元素)</p>
-<p>​    -数组合并：-concat()–拼接，创建一个新数组</p>
-<p>​    -迭代器函数(有for循环的函数)：</p>
-<p>​        -every(过滤器函数):迭代数组中的每一个函数，直到出现false。</p>
-<p>​        -some:同every相反，直到返回true。</p>
-<p>​        -forEach():和使用for相同。</p>
-<p>​        -map():创建了新数组，每一个都迭代。</p>
-<p>​        -filter():创建新数组，只存放返回值是true的那个。</p>
-<p>​        -reduce(function(preV,curV,idx,arr)):内部函数会返回一个叠加到累加器的值。常用于数组所有元素求和。</p>
-<p>​    -join():将数组元素连接成串。</p>
-<p>​    -indexOf():输出与搜索值相同的第一个值的索引。</p>
-<p>​    -reverse:翻转数组/字符串。</p>
-<p>​    -valueOf:将数组作为字符串返回。</p>
-<p>​    -sort:可以自定排序顺序，a-b按照降序排？</p>
-<p>​    -</p>
+        <h4 id="Chrome调试技巧："><a href="#Chrome调试技巧：" class="headerlink" title="Chrome调试技巧："></a>Chrome调试技巧：</h4><p>​    1：command+option+i 快捷键打开。三点调控制台位置。有可以快速切换pc和手机端的按钮，edit可以自定义设备。</p>
+<p>​    2：控制台中 elements（元素）可以用来控制整体的布局，右键的一些功能可以直接从控制台写html。</p>
+<p>​    3：元素状态改变的监控方法。break on里的subtree</p>
+<p>​    4:可以通过在一个区域右键-检查来快速找到相应的样式，并修改。</p>
+<p>​    5:elements可以直接通过相应的盒子，来改变盒模型大小。computed来查看当前盒子上所有的css样式。</p>
+<p>​    6：可以通过eventlistener来快速查找有事件的dom节点在哪里。</p>
+<p>​    7：console-控制台。可以用来显示一些调试的信息.可以用来简单检查一段js代码有没有错误。控制台日志可保存。</p>
+<p>​    8：本地文件使用source中的filesystem放文件，这样在style中该样式了，文件也会自动更新。如果是线上文件则是在network文件夹中修改。</p>
+<p>​    9：network用来抓包，看网络性能。和文件加载过程。（网络请求面板）disable cache 勾选后，所有的资源不会使用cache中已经下载好的，而是全部重新下载。</p>
+<p>​    10：页面重绘，三小点-more tools-rendering。</p>
+<p>​    11：more tools中的coverage可以筛选出没有被使用到的代码，红色部分就是没有被用到的，通过这个可以做出一些页面的优化。</p>
+<p>​    12：页面动画调试监控。animations来调节动画效果。</p>
+<p>​    13：network 可以调节不同网络下的页面显示状况，还可以通过user agent来在不同设备下显示页面的状况。</p>
+<p>​    14：request block 让浏览器阻止一些请求资源，可以用来阻止广告。。。</p>
+<p>​    15：search用来查找全局的资源。</p>
+<p>-调用后台接口传过来的数据，可以通过控制台的network查看传输的数据的情况，成功或失败， 主要还是看XHR(XMLHttpRequst对象，向服务器发送请求)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" data-id="ckdipnf13000532wg29kt4oxl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux指令" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/06/linux%E6%8C%87%E4%BB%A4/" class="article-date">
-  <time datetime="2020-08-06T11:21:52.957Z" itemprop="datePublished">2020-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="linux命令："><a href="#linux命令：" class="headerlink" title="linux命令："></a>linux命令：</h4><p>​    -pwd-查看用户的当前目录</p>
-<p>​    -cd -切换目录   .当前目录 ..退去上级目录 ~主目录  -cd前的目录(使用tab可以补全输入命令)</p>
-<p>​    -绝对路径（有/）与相对路径：相对是相对当前目录来说的。 去往不同的路径时使用绝对。</p>
-<p>​    -ls-显示当前目录信息(只显示普通文件)  stat-显示文件详细信息  ls -ah:查看隐藏目录</p>
-<p>​        -a：可显示隐藏文件</p>
-<p>​        -l：使用长格式列出文件</p>
-<p>​        -t：根据最后修改时间改变</p>
-<p>​        -ltr s*：列出所有开头是s的文件</p>
-<p>​    -mkdir[参数]-[目录]-在当前目录下，创建一个空目录</p>
-<p>​        -p：创建多级目录</p>
-<p>​        -v：显示目录的常见过程</p>
-<p>​    -rmdir-删除当前目录</p>
-<p>​    -touch-创建一个任意格式的文件 记得加后缀</p>
-<p>​    -cp-复制文件。cp[参数]-[文件]（还有很多的option）</p>
-<p>​        -f [文件]-[文件重命名]：复制直接覆盖原文件</p>
-<p>​        -i：会询问是否覆盖</p>
-<p>​        -v：显示cp的执行过程</p>
-<p>​        -R：复制目录</p>
-<p>​        -r：一次复制多个文件</p>
-<p>​    -mv 文件+移去目录：移动文件 </p>
-<p>​        -i：存在同名文件，则会询问是否覆盖</p>
-<p>​    -cat-查看文本文件的内容</p>
-<p>​        -n：加行号显示</p>
-<p>​    -more：查看内容长的文本</p>
-<p>​    -echo-文件重定向，有则打开，无则创建</p>
-<p>​    -gzip,bzip2,tar -czvf,-文件压缩命令</p>
-<p>​    -gzip -d,bzip2 -d,tar -xzvf,-解压命令</p>
-<p>​    -man -显示命令的使用 q用来退出</p>
-<p>​    -clear-清空屏幕</p>
-<p>​    -kill-杀死进程， 用ps（静态进程快照）top（动态进程）查找进程，然后kill+pid    sudo lsof -i :端口 -查找响应的端口号(kill也要加sudo)</p>
-<p>​    -alias-对命令重命名 别名=指令名</p>
-<p>​    -ssh[参数]-[主机]：登录远程服务器。给予ssh加密协议实现安全的远程登录服务器，实现对服务器的管理</p>
-<p>​        -1/2：强制使用 ssh 协议版本 1/2</p>
-<p>​        -4/6：强制使用 ipv4/6 地址</p>
-<p>​        -f：后台执行ssh指令</p>
-<p>​        -l&lt;登录名&gt;：指定连接远程服务器的登录用户名</p>
-<p>​        -p&lt;端口&gt;：指定远程服务器上的端口</p>
-<p>​    -vim </p>
-<p>​       - vi+文件名-进入文件 按s进入insert开始修改，修改完成后按一下esc调出vi命令，输入:wq保存并退出vi模式。</p>
-<p>shell:是一个用shell编写的脚本程序</p>
-<p>​      有许多种类：bash，dash，zsh等</p>
-<p>​      bash：（默认）有很灵活和强大的编程接口，同时又有很友好的用户界面。功能包括命令补齐、通配符、命令历史记录、别名等。</p>
-<p>​      dash：bash的弟弟，功能没有bash多。</p>
-<p>​      zsh：最新的，所有shell的集合+增加功能。改进的shell选项处理、shell兼容性模式以及可加载模块。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/linux%E6%8C%87%E4%BB%A4/" data-id="ckdipnf14000632wgb2e33oxc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-md的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/06/md%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2020-08-06T11:21:52.957Z" itemprop="datePublished">2020-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#-从1个到6个，表示标题的大小。</p>
-<p>*，+，-，数字-都可以用来表示列表（都是一个圆点，还可以嵌套）</p>
-<p>[名字]（url）-表示一个链接</p>
-<p> 使用点`（esc下面的那个）来把代码块框起来。</p>
-<p>！[图片名]  (url) 表示一个图片</p>
-<p>使用3个*可以变为加粗字体</p>
-<p>用三个以上的星号、减号、底线来建立一个分隔线</p>
-<p><u>    使用这个html标签来添加下划线</p>
-<p>使用&gt; 来表示一个区块，可以多个连用。依次递增表示嵌套</p>
-<p>###快捷键###</p>
-<p>-cmd+b 加粗</p>
-<p>-cmd+i 斜体</p>
-<p>-cmd+u 下划线</p>
-<p>-cmd+k 超链接</p>
-<p>-cmd+数字  标题级数</p>
-<p>-crl+` 代码块</p>
-<p>-crl+- 和html一样的注释</p>
-<h5 id="Hexo常用指令："><a href="#Hexo常用指令：" class="headerlink" title="Hexo常用指令："></a>Hexo常用指令：</h5><p>hexo g:</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/md%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="ckdipnf15000732wgh2fk3k2i" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-npm学习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/06/npm%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time datetime="2020-08-06T11:21:52.957Z" itemprop="datePublished">2020-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="npm学习总结"><a href="#npm学习总结" class="headerlink" title="npm学习总结"></a>npm学习总结</h3><h4 id="一些指令："><a href="#一些指令：" class="headerlink" title="-一些指令："></a>-一些指令：</h4><h5 id="初始化"><a href="#初始化" class="headerlink" title="-初始化:"></a>-初始化:</h5><p>​        -npm init  npm init -y (自动生成package.json)—npm i。npm i express 可以一次安装多个包。</p>
-<p>​        -npm i -g pkg：在全局安装包。</p>
-<p>​        -npm i -S(–save) pkg：安装包作为依赖。–dep</p>
-<p>​        -npm i -D(–save-dev pkg):安装包作为开发依赖。–devD</p>
-<p>​        -npm config set —初始化默认配置。还可以配置其他的源来安装js包。使用不同团队的东西之前要注意切换set的地址。<code>npm set registry http://registry-npm.firstshare.cn</code></p>
-<p>​            -npm config ls -l—查看npm内部的默认配置参数。</p>
-<p>​        -npm preinstall–客户无感知安装。 项目的 <code>package.json</code> 里增加 <code>preinstall</code> 要执行的脚本，这样合作方可以无感知的安装。</p>
-<p>​        -npm ci—全新的安装包，对package-lock.json友好。</p>
-<h5 id="运行测试："><a href="#运行测试：" class="headerlink" title="-运行测试："></a>-运行测试：</h5><p>​        -npm test（t）—</p>
-<h5 id="查看项目中可用脚本："><a href="#查看项目中可用脚本：" class="headerlink" title="-查看项目中可用脚本："></a>-查看项目中可用脚本：</h5><p>​        -cat package.json</p>
-<h5 id="npm-scripts："><a href="#npm-scripts：" class="headerlink" title="-npm scripts："></a>-npm scripts：</h5><p>​        -作用：预定义前后钩子，自定义脚本。</p>
-<p>​        -npm run env：列出项目中所有的npm环境变量</p>
-<h5 id="删除重复的包："><a href="#删除重复的包：" class="headerlink" title="-删除重复的包："></a>-删除重复的包：</h5><p>​        -npm dedupe(ddp)—删除重复的依赖项。</p>
-<h5 id="扫描应用程序中的漏洞："><a href="#扫描应用程序中的漏洞：" class="headerlink" title="-扫描应用程序中的漏洞："></a>-扫描应用程序中的漏洞：</h5><p>​        -npm audit —扫描项目中的任何依赖中的任何漏洞。npm audit fix 会自动安装所有漏洞包的补丁版本。</p>
-<h5 id="本地测试你的软件包："><a href="#本地测试你的软件包：" class="headerlink" title="-本地测试你的软件包："></a>-本地测试你的软件包：</h5><p>​        -npm link (模块名)：实现任意位置的npm模块命令的全局可执行。（不加模块名则是开发一个全局的模块。）</p>
-<h5 id="列出所有已安装的软件包："><a href="#列出所有已安装的软件包：" class="headerlink" title="-列出所有已安装的软件包："></a>-列出所有已安装的软件包：</h5><p>​        -npm list（ls）—加depth=1可以限制搜索深度。</p>
-<h5 id="拓展nrm"><a href="#拓展nrm" class="headerlink" title="-拓展nrm:"></a>-拓展nrm:</h5><p>​            -nrm ls—查看已有的npm</p>
-<p>​            -nrm add 源名称 url—添加相关源</p>
-<p>​            -nrm del 源名称—删除相关源</p>
-<p>​            -nrm use 源名称—切换相关源</p>
-<p>​            -nrm test —测试源速度</p>
-<h4 id="工程上使用到npm的地方："><a href="#工程上使用到npm的地方：" class="headerlink" title="-工程上使用到npm的地方："></a>-工程上使用到npm的地方：</h4><p>​    -node_modules目录：每个包都会将该包的依赖安装到当前包所在的<code>node_modules</code>目录中。（包要使用的依赖都会安装在里面。）从npm5.x增加了package-lock.json</p>
-<p>​    -package-lock.json的详细描述主要由version、resolved、integrity、dev、requires、dependencies这几个字段构成：</p>
-<p>​        -version—版本</p>
-<p>​        -resolved—安装源</p>
-<p>​        -interity—表明包完整性的hash值（验证包是否失效）</p>
-<p>​        -dev—如果为true，则此依赖关系仅是顶级模块的开发依赖关系或者是一个的传递依赖关系</p>
-<p>​        -requires—依赖包所需要的所有依赖项，对应依赖包<code>package.json</code>里<code>dependencies</code>中的依赖项。</p>
-<p>​        -dependencies—依赖包<code>node_modules</code>中依赖的包，与顶层的<code>dependencies</code>一样的结构</p>
-<h4 id="拓展—package-json中的配置："><a href="#拓展—package-json中的配置：" class="headerlink" title="拓展—package.json中的配置："></a>拓展—package.json中的配置：</h4><p>​    -scripts：存放一些npm run xx相关的指令。会告诉你指令相关运行时什么。也可以自定义脚本命令。（npm run有串行&amp;&amp;和并行&amp;两种）执行相应命令时都会执行Pro/post钩子函数。钩子函数中定义了命令执行前后的命令。</p>
-<p>​    -dependencies：基本依赖，写在一个简单的对象中，将依赖程序包映射到版本范围。(就是项目在线上运行时所要使用到的依赖。）</p>
-<p>​    -devDependencies：是开发时所要使用到的依赖，在线上时并不需要他们。</p>
-<p>​        -包含什么：构建工具（webpack相关:为了生成生成环境代码。线上使用的代码是他们的工作结果）预处理器（css的相关预编译器，js中的ts，coffee-script，babel等）测试工具（chai，e2e等）其他（webpack-dev-server 支持开发热加载，线上是不用的。等这样的东西。）</p>
-<p>​    -peerDependencies、bundleDependencies、optionalDependencies：作为npm包的发布者需要考虑使用的。后面再讲。</p>
-<p>​    -注意版本号前的^和~：前者被优先考虑，是会把当前库中的最新版本更新到当前使用的最新版本。比如3.3.4，库会匹配3.x中的最新版本。（作用于版本号的第一个值）后者则是作用域版本号的中间的号。比如3.3.4，库会匹配3.3.x中最新版本。</p>
-<p>/*注：babel-runtime 是 dependencies 而不是 devDependencies。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/npm%E5%AD%A6%E4%B9%A0/" data-id="ckdipnf16000932wgf06ahofm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/07/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/" data-id="ckdkezj7j000b2fnmfaqw0oov" class="article-share-link">Share</a>
       
       
     </footer>
@@ -424,8 +136,8 @@
   
     <article id="post-vue学习" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/06/vue%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time datetime="2020-08-06T11:21:52.957Z" itemprop="datePublished">2020-08-06</time>
+    <a href="/2020/08/07/vue%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2020-08-07T15:58:53.373Z" itemprop="datePublished">2020-08-07</time>
 </a>
     
   </div>
@@ -519,29 +231,44 @@
 <p>–组件中  child = perent.$refs.profile(child是perent中所有dom节点的集合，标识就是profile)</p>
 <p>表单验证：validate()</p>
 <p>​    p=this.$refs.form.validate()  submit过来的从上面传来的表单值，是否有效，p.then.</p>
-<h5 id="vue-router："><a href="#vue-router：" class="headerlink" title="vue-router："></a>vue-router：</h5><p>-核心：改变url，但是页面不进行整体的刷新。</p>
-<p>-路由规则：hash和history</p>
+<h5 id="vue-router："><a href="#vue-router：" class="headerlink" title="vue-router："></a>vue-router：</h5><p>-<strong>核心：</strong>改变url，但是页面不进行整体的刷新。结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。</p>
+<p>-<strong>路由规则：</strong>hash和history</p>
 <p>​    -hash：#=锚点，本质是改变window.location的href属性。可以直接赋值location.hash改变href，但页面不刷新。</p>
-<p>​    -history：可以改变url而不刷新页面。</p>
+<p>​    -history：可以改变url而不刷新页面。(比较新，IE9之前不能使用，所以hash更加通用一些)</p>
 <p>​        -history.pushState()：类似栈，有进有出</p>
-<p>​        -history.replaceState()：替换url，没有退回</p>
+<p>​        -history.replaceState()：替换url，没有退回(常用的)</p>
 <p>​        -history.back()</p>
 <p>​        -history.forward()</p>
 <p>​        -history.go(num)</p>
-<p>-使用：结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。</p>
-<p>-步骤：</p>
+<p>-<strong>路由分类：</strong></p>
+<p>​    -动态路由：path:’/user/:id’ .以冒号开头，只要前缀相同就都能映射到相同的路由上去。</p>
+<p>​    -嵌套路由：有同一个父路由的路由。在普通路由配置的时候加入一个children：[{其他路由}]</p>
+<p>​    -命名路由：给路由加一个name，在使用router-link :to=”{ name：‘xx’，params：{xx}}” name是前半段，params是后半段。跳转的路径是/xx/xx.</p>
+<p>-<strong>路由视图：</strong><router-view></router-view> –必须有，相当于是在页面中给路由站了一个位置。</p>
+<p>-props：在路由中加入props参数，可以将组件和路由解耦，这样使的组件更易重用和测试。<strong>设置：</strong>props：true 。这样就会将route.params设置为组件属性（???）—传参这里有很大的问题。</p>
+<p>-<strong>步骤：</strong></p>
 <p>1：定义路由或者从别处引入，<script src="./vue-router.js"></script>。</p>
 <p>2:准备路由所需要的组件。(能够跳转的块)。</p>
-<p>3：创建路由对象，在对象中配置路由规则 var routes=new VueRouter({ path:’/foo’,component:Foo })。(这三个值是必备的)</p>
+<p>3：创建路由对象，在对象中配置路由规则 var routes=new VueRouter({ path:’/foo’,component:Foo })。（这两值必备，name可有可无）</p>
 <p>4：在vue中注入路由。vue实例中，加入一个router。</p>
-<p>5：通过<router-view></router-view>挖坑，路径匹配到的组件都会渲染到这个组件来。</p>
+<p>5：通过<router-view></router-view>挖坑，路径匹配到的组件都会渲染到这来。</p>
 <p>6：路由通过<router-link to="相应路由的path">跳转，这个被渲染后会变成a标签，值的前面会变成一个#，从而变成锚点。(链接的一种，就是在<a name="xxx" href="#hello">这就是在特定的xxx的地方设置了一个锚点。)</p>
-<p>-实际操作：</p>
+<p>-<strong>实际操作：</strong></p>
 <p>​    1：在组件目录下写spa，然后在router目录下使用import引入之前写的spa(使用相对路径(相对路径：./文件名表示在当前目录下。))</p>
 <p>​    2：在router目录中的index.js，的下面写入相应的路由，按照给定的模板写。引入时要注意new router的地址。import .. from ‘new router的地方’(给的模板中设置的name是用在嵌套路由上的。)</p>
 <p>​    3：在main.js中import相应的router</p>
 <p>​    4：在app.vue中加入<router-link>来定义页面中点击触发部分(定义当点击后去到的地方)<router-view>来在页面中显示。</p>
-<p>​    5:添加重定向和单独配置路由</p>
+<p>​    5：重定向-就是在路由中一定要加一个路由，指向有的页面（用户输入了不存在的路由，跳转到有用的页面去）两种写法：1：path:’<em>‘,redirect:’/组件’ 2：path:’\</em>‘,redirect:{name:’组件’}。</p>
+<p>-<strong>路由守卫：</strong> 就是在路由的基础上添加了钩子函数    </p>
+<p>​    -全局前置守卫：router.beforeEach((to,from,next)=&gt;{})  to=即将进入的目标路由对象-到哪去。from=当前要离开的路由-从哪来。next=function，一定要调用这里的方法，来resolve这个钩子。next函数中的参数，会影响执行效果。【无参-&gt;进行下一个钩子，如果全都执行完了，那么导航的状态就是confirmed。false-&gt;中断当前的导航。在正在改变url的过程中，那么url地址会重置到from路由对应的地址。’/‘-&gt;跳转到不同的地址。中断正在跳转的地址，然后去一个新的地址。(可以传递任意函数？？？)。error-&gt;导航过程会被终止，并且错误会传去router.onError()注册过的回调中去。】</p>
+<p>​    -全局解析守卫：router.beforeResolve()=和上面类似。区别：在导航被确认之前，同时在all component内守卫，和异步路由组件被解析之后，解析守卫被调用。</p>
+<p>​    -全局后置钩子：router.afterEach((to,from)=&gt;{})。没有next，不会改变导航本身。</p>
+<p>-<strong>导航解析流程：</strong> (导航：路由正在跳转的过程)</p>
+<p>触发导航 -&gt; 在失活的组件里调用 <code>beforeRouteLeave</code> 守卫。(失活的组件就是要被离开的组件)-&gt;调用全局的 <code>beforeEach</code> 守卫。(在导航前)-&gt;在重用的组件里调用 <code>beforeRouteUpdate</code>(路由改变，组件被复用时调用)-&gt;在路由配置里调用 <code>beforeEnter</code>-&gt;解析异步路由组件-&gt;在被激活的组件里调用 <code>beforeRouteEnter</code>-&gt;调用全局的 <code>beforeResolve</code>-&gt;导航被确认-&gt;调用全局的 <code>afterEach</code> 钩子-&gt;触发 DOM 更新-&gt;调用 <code>beforeRouteEnter</code> 守卫中传给 <code>next</code> 的回调函数，创建好的组件实例会作为回调函数的参数传入</p>
+<p>-元信息：</p>
+<p>-<strong>过渡动效：</strong> 加入一个<transition></transition> 来实现切换路由时中间的过渡动画。</p>
+<p>-<strong>数据获取：</strong> 两种，导航完成<strong>前</strong>-在路由进入的守卫中获取数据，获取数据之后再进行导航/<strong>后</strong>-先导航，结束后在组件的生命周期钩子中获取数据。</p>
+<p>-<strong>滚动行为：</strong> 控制页面来回回滚后，前的滚动条进度保持的位置。<strong>使用：</strong> 给router实例中，加入一个scrollBehavior(to, from, savePosition)方法。</p>
 <h5 id="路由参数："><a href="#路由参数：" class="headerlink" title="路由参数："></a>路由参数：</h5><p>-router传递参数：使用上面的那个router-link</p>
 <p>-接受参数：</p>
 <p>​    -组件接收：在html中获取路由参数, 通过$route.params.参数名</p>
@@ -549,7 +276,16 @@
 <p>​    -js接收：在js中获取路由参数, 通过this.$route.params.参数名</p>
 <p><code>var productType = Vue.component(&#39;productType&#39;,&#123;</code><br>    <code>//在html中获取路由参数, 通过$route.params.参数名</code><br>    <code>template:&#39;&lt;div&gt;这里显示商品编号&#123;&#123;$route.params.id&#125;&#125;&lt;/div&gt;&#39;,</code><br>    <code>//模板编译完成之后调用</code><br>    <code>mounted() &#123;</code><br>        <code>//在js中获取路由参数, 通过this.$route.params.参数名</code><br>        <code>console.log(this.$route.params.id)</code><br>    <code>&#125;,</code><br><code>&#125;)</code></p>
 <p>-响应路由的参数变化：</p>
-<h5 id="vuex："><a href="#vuex：" class="headerlink" title="vuex："></a>vuex：</h5><p>-专门为vue.js开发的状态管理模式，集中管理所有组件的状态</p>
+<h5 id="vuex："><a href="#vuex：" class="headerlink" title="vuex："></a>vuex：</h5><p>-专门为vue.js开发的状态管理模式，集中管理所有组件的状态。</p>
+<p>state–大树的树干–共用的数据，不同的组件就像树的分叉，会使用树的一部分数据，但是会根据自己做出一些调整。这个调整可以使用mutation改变，(过程是同步的？？？—就是逻辑是同步改变的)异步逻辑都封装到action里面。</p>
+<p>-vuex部分文件：api-里面会放一些抽出来的api请求，与后台交互的请求响应代码。？？？   Component-放一些单页面组件，store-index.js=组装模块并导出store的地方，actions.js=根级别的action，mutation.js=跟级别的mutation。modules-中存放着各种模块（这种模块中放的是什么）</p>
+<p>-一个模块中，要创建state，mutation，action，getter</p>
+<p>-<strong>state：</strong>在vue实例中，可以通过this.$store.state.data(可换，数据名，来访问到store中的数据)。当一个组件需要获取多个状态时(数据???)将这些状态都声明在计算中会冗余，这时候，可以使用mapState辅助函数—生成计算数据。（就是在computed中写了一个mapState函数，将上面的参数简化。）</p>
+<p>-<strong>getter：</strong> state的计算属性，就像vue中的computed一样，返回值也会根据他的依赖被缓存起来，依赖值改变才会改变。getter会暴露一个  store.getter的对象，(数据在getter中被计算，我们可以使用store.getter来直接调用这些数据)在getter中也能接受其他的getter的参数。</p>
+<p>-<strong>actions：</strong> state中出来的数据，action要来取数据，然后action中取完的数据（使用commit，其中有两个参数，事件，(???回调函数吗，是什么)）才能再使用mutation来修改里面的值。action 提交的是mutation，而不是直接改变状态。有它的原因就是为了可以在成功和失败两个状态之间横跳。可以使用promise 也可以使用async/await</p>
+<p>-<strong>mutation：</strong> 改变store中的状态，(就像是在原有的树枝上长出一截新的树枝。)有事件和回调函数。(我现在的理解就是他就像java里面的那个函数重写一样，在原有的基础上给原来的增加一些方法)</p>
+<p>-new store-创建实例，其中必备state来存放一个大的共享数据，</p>
+<p>state写数据-&gt;要改变数据状态-&gt;action提交mutation-&gt;mutation直接改变数据。</p>
 <p>Q:1：v-model绑定，循环渲染的时候value怎么设置。</p>
 <p>2：ref，prop的具体区别，实际使用的时候呢</p>
 <p>3:fx-cascader中的数据怎么传</p>
@@ -558,77 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/vue%E5%AD%A6%E4%B9%A0/" data-id="ckdipnf17000a32wg77qj7jcz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-快捷键记录" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/06/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" class="article-date">
-  <time datetime="2020-08-06T11:21:52.957Z" itemprop="datePublished">2020-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>替换：command+option+f<br>查找：command+f<br>加单行注释：command+/<br>块注释：option+shift+a<br>快速查找：command+p    +&gt;可以使用响应的插件<br>一次选择多个相同项：command+d<br>格式化代码：control+k，control+d<br>在vscode中调出终端：control+·（esc下面的那个）(好像有一些配置)</p>
-<p>相关插件：<br>    beautiful-美化代码<br>    code runner-运行任何一种语言<br>    chinese-中文<br>    debugger for chrome-调试代码，塞断点用。在luanch中修改url到相应的地址<br>    eslint-检测代码是否完整 需要全局安装，和初始化<br>    git相关：<br>        git history<br>        git project manager<br>        gitconfig syntax<br>        gitlens-可以显示代码最近的仓库</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" data-id="ckdipnf18000b32wg5yuv6nz6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-浏览器调试技巧" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/06/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/" class="article-date">
-  <time datetime="2020-08-06T11:21:52.957Z" itemprop="datePublished">2020-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Chrome调试技巧："><a href="#Chrome调试技巧：" class="headerlink" title="Chrome调试技巧："></a>Chrome调试技巧：</h4><p>​    1：command+option+i 快捷键打开。三点调控制台位置。有可以快速切换pc和手机端的按钮，edit可以自定义设备。</p>
-<p>​    2：控制台中 elements（元素）可以用来控制整体的布局，右键的一些功能可以直接从控制台写html。</p>
-<p>​    3：元素状态改变的监控方法。break on里的subtree</p>
-<p>​    4:可以通过在一个区域右键-检查来快速找到相应的样式，并修改。</p>
-<p>​    5:elements可以直接通过相应的盒子，来改变盒模型大小。computed来查看当前盒子上所有的css样式。</p>
-<p>​    6：可以通过eventlistener来快速查找有事件的dom节点在哪里。</p>
-<p>​    7：console-控制台。可以用来显示一些调试的信息.可以用来简单检查一段js代码有没有错误。控制台日志可保存。</p>
-<p>​    8：本地文件使用source中的filesystem放文件，这样在style中该样式了，文件也会自动更新。如果是线上文件则是在network文件夹中修改。</p>
-<p>​    9：network用来抓包，看网络性能。和文件加载过程。（网络请求面板）disable cache 勾选后，所有的资源不会使用cache中已经下载好的，而是全部重新下载。</p>
-<p>​    10：页面重绘，三小点-more tools-rendering。</p>
-<p>​    11：more tools中的coverage可以筛选出没有被使用到的代码，红色部分就是没有被用到的，通过这个可以做出一些页面的优化。</p>
-<p>​    12：页面动画调试监控。animations来调节动画效果。</p>
-<p>​    13：network 可以调节不同网络下的页面显示状况，还可以通过user agent来在不同设备下显示页面的状况。</p>
-<p>​    14：request block 让浏览器阻止一些请求资源，可以用来阻止广告。。。</p>
-<p>​    15：search用来查找全局的资源。</p>
-<p>-调用后台接口传过来的数据，可以通过控制台的network查看传输的数据的情况，成功或失败， 主要还是看XHR(XMLHttpRequst对象，向服务器发送请求)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/" data-id="ckdipnf1a000c32wg116d9hy0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/07/vue%E5%AD%A6%E4%B9%A0/" data-id="ckdkezj7s000c2fnm1w0ohxcg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -640,8 +306,8 @@
   
     <article id="post-CSS基础" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/06/CSS%E5%9F%BA%E7%A1%80/" class="article-date">
-  <time datetime="2020-08-06T11:21:52.953Z" itemprop="datePublished">2020-08-06</time>
+    <a href="/2020/08/07/CSS%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2020-08-07T15:58:53.369Z" itemprop="datePublished">2020-08-07</time>
 </a>
     
   </div>
@@ -692,7 +358,7 @@
 <p>​    -属性：grid-template-columns-一个grid的横向上的宽，grid-template-rows-竖向上的高，(可以随意的控制格子的大小)。 grid-column-以竖向划分。如果是3*3的区域，那么column的数量就有4个，grid的竖向对个格子的大小进行划分，从start开始，到end结束，(1/4–从第一根开始到第四根结束。)grid-row-以横向划分，其余均同上。</p>
 <h5 id="预处理语言-less："><a href="#预处理语言-less：" class="headerlink" title="预处理语言-less："></a>预处理语言-less：</h5><p>-在vue框架中添加scoped属性，表示该style标签所包含的样式仅仅作用于当前的vue组件，这样不会产生样式的全局污染。lang标签则是规定了使用哪种css预处理语言。</p>
 <p>-初始起步：</p>
-<p>​    -less的安装：npm install <a href="mailto:&#108;&#101;&#115;&#x73;&#45;&#x6c;&#x6f;&#97;&#x64;&#x65;&#114;&#64;&#52;&#46;&#49;&#46;&#x30;">&#108;&#101;&#115;&#x73;&#45;&#x6c;&#x6f;&#97;&#x64;&#x65;&#114;&#64;&#52;&#46;&#49;&#46;&#x30;</a> –save(less的版本过高会出现问题，vue项目就无法启动) 安装后使用 lessc-v 检查是否安装成功。</p>
+<p>​    -less的安装：npm install <a href="mailto:&#108;&#101;&#115;&#115;&#x2d;&#x6c;&#111;&#x61;&#100;&#101;&#x72;&#x40;&#x34;&#x2e;&#49;&#x2e;&#48;">&#108;&#101;&#115;&#115;&#x2d;&#x6c;&#111;&#x61;&#100;&#101;&#x72;&#x40;&#x34;&#x2e;&#49;&#x2e;&#48;</a> –save(less的版本过高会出现问题，vue项目就无法启动) 安装后使用 lessc-v 检查是否安装成功。</p>
 <p>​    -less的引用：普通使用：将官网中的说明引入即可。vue项目中：import less from ’less‘  vue.use(less);   style设置lang=’less‘。</p>
 <p>-less在css语言的基础上增加了，变量，混合(mixin)，函数等功能。</p>
 <p>-格式：@变量名：值</p>
@@ -711,7 +377,429 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/CSS%E5%9F%BA%E7%A1%80/" data-id="ckdipnf0v000032wgbjct74te" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/07/CSS%E5%9F%BA%E7%A1%80/" data-id="ckdkezj6y00002fnm1nzh8s00" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-curl" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/07/curl/" class="article-date">
+  <time datetime="2020-08-07T15:58:53.369Z" itemprop="datePublished">2020-08-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>-curl-command line url viewer。一个命令行工具。发出网络请求，然后得到和提取数据。</p>
+<p>-使用：</p>
+<p>​    -curl + url =直接显示网页源码</p>
+<p>​    -curl -o [文件名] +url = 保存网页源码</p>
+<p>​    -curl -L +url = 自动跳转页面</p>
+<p>​    -curl -i + url = 显示response的头部消息，连同代码一起</p>
+<p>​    -curl -v + url = 显示一次http通信的过程，请求和接收都能看见</p>
+<p>​    -curl –trace(–trace-ascii) [文件名] url = 更详细的通信过程</p>
+<p>​    -curl url/表单内容 = 使用GET方法发送表单</p>
+<p>​    -curl -X POST(–data-urlencode) –data + “数据” + url = 使用POST方法发送，注意数据要和url分开。 (可以让curl帮忙编码未编码的表单)(curl默认的http动词是get，所有要使用别的时，要在前面加上 -X)</p>
+<p>​    -curl –form upload=@本地文件名 –form press=OK [url] = 从文件上传表单</p>
+<form method="POST" enctype='multipart/form-data' action="upload.cgi">
+　　　　<input type=file name=upload>
+　　　　<input type=submit name=press value="OK">
+</form>
+
+<p>​    -curl –referer + url = 在response头部信息中，提供一个Referer字段，表示是从哪里跳转过来的。</p>
+<p>​    -curl –user-agent “[user agent]” [url]  = 表示客户端的设备信息。服务器会根据不同的设备，返回不同格式的网页。</p>
+<p>​    -curl –cookie “name=xxx” url = 可以发送cookie</p>
+<p>​    -curl –header “头部内容” + url = 在请求头中自行增加一个头信息。</p>
+<p>​    -curl –user name:password + url = 需要进行http认证的时候。</p>
+<p>详细参考表：<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2019/09/curl-reference.html">http://www.ruanyifeng.com/blog/2019/09/curl-reference.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/07/curl/" data-id="ckdkezj7300012fnmchtu4ccv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-dom和bom" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/07/dom%E5%92%8Cbom/" class="article-date">
+  <time datetime="2020-08-07T15:58:53.369Z" itemprop="datePublished">2020-08-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="dom：HTML和XML的应用程序接口"><a href="#dom：HTML和XML的应用程序接口" class="headerlink" title="dom：HTML和XML的应用程序接口"></a>dom：HTML和XML的应用程序接口</h4><p>-用来实现页面的动态交互效果。html的每一个标签都能成为dom的一个节点。</p>
+<p>​    -节点分类：-文档<del>：文档本身。-元素</del>：所有的html元素。-属性<del>：html元素内的属性。-文本</del>：元素内的文本。-注释~：html中的注释。</p>
+<p>-获取元素：</p>
+<p><code>document.getElementById(&#39;xxx&#39;) //通过Id来获取对象，后面的都是数组    document.getElementsByTagName(&#39;div&#39;)[0] //通过标签名获取(获取第1个div标签) document.getElementsClassName(&#39;red&#39;)[0] //获取第1个class=&#39;red&#39;的元素</code></p>
+<p>（上面方法在兼容IE的情况下再使用）</p>
+<p><code>document.querySelector(&#39;&#39;) //获取元素(第一个遇到的)     document.querySelectorAll(&#39;div&#39;) //获取所有含有div的元素         document.querySelectorAll(&#39;div&#39;)[0] //获取第一个div标签</code></p>
+<p>（常用的）</p>
+<p>-新增节点：</p>
+<p><code>document.createElement()//标签节点</code></p>
+<p><code>document.createTextNode()//文本节点</code></p>
+<p><code>div1.appendChild(text1)      div1.innerText = &#39;你好&#39;    div1.textContent = &#39;你好&#39;//将文本节点插入到元素中去。</code></p>
+<p><code>document.body.appendChild(div1)     div1.appendChild(text1)//将在页面中的元素插到页面中。</code></p>
+<p><code>let text2 = text1.cloneNode.call(text1,true)//true-深拷贝，false-浅拷贝。</code>//拷贝的原因是节点只能被添加一次，不能重复使用，如果想要重复使用就要拷贝。</p>
+<p>-获取属性：dom对象.属性=“xxx”</p>
+<p>-删除节点：</p>
+<p>div.parentNode.removeChild(div1) //从树种删除节点</p>
+<p>-改属性：</p>
+<p>div.className //修改class</p>
+<p>div.style//修改style</p>
+<p>div.dataset//?</p>
+<p>-修改节点：</p>
+<p>​    -appendChild()//指定节点的最后一个节点列表后添加一个新的子节点</p>
+<p>​    -insertBefore()//将一个给定节点插入到一个给定元素节点的给定子节点的前面</p>
+<p>​    -removeChild()//从一个给定元素中删除子节点</p>
+<p>​    -replaceChild()//把一个给定父元素里的一个子节点替换为另外一个节点</p>
+<p>-访问节点：</p>
+<p>​    -<code>document.documentElement //获取html元素</code></p>
+<p>​    -<code>document.head //获取head元素</code></p>
+<p>​    -<code>document.body //获取body元素</code></p>
+<pre><code> -`window //获取窗口，可通过`</code></pre>
+<p>​    -<code>window.onclick 对窗口进行监听</code> </p>
+<p>​    -<code>document.all //获取所有的标签</code></p>
+<p>-node节点的特性和方法：</p>
+<p>​    -firstChild //获取第一个子节点</p>
+<p>​    -lastChild//获取最后一个子节点</p>
+<p>​    -parentNode//指向父节点</p>
+<p>​    -ownerDocument//指向这个节点所属的文档</p>
+<p>​    -childNodes//所有子节点列表</p>
+<p>​    -hasChildNodes() //Boolean，当childNodes包含一个或多个节点时，返回真值</p>
+<p>-dom事件：    </p>
+<p>​    -冒泡事件：从内向外</p>
+<p>​    -捕获事件：从外向内</p>
+<p>​    -阻止冒泡：</p>
+<p>​        -event.stopPropagation()    event.stopImmediatePropagtion()–阻止剩下的事件处理程序被执行</p>
+<p>​        -preventDefault()–</p>
+<p>​        -innerText–表示起始标签和结束标签之间的文本、innerHTML–表示元素的所有元素和文本的HTML代码、outerText–替换的是整个目标节点，返回的和innerText相同、outerHTML–同上</p>
+<p>​    -事件监听函数：</p>
+<p>​        -oDiv.onclick = function(){}//默认冒泡</p>
+<p>​        -attachEvent() ，detachEvent()//在IE中使用？//都有两个参数–事件动作，回调函数。//在使用attachEvent()方法中，事件处理程序会在全局作用域中运行。</p>
+<p>​        -addEventListener()和removeEventListener()//用来分配和移除事件处理函数//三个参数：事件名称，要分配的函数，事件阶段是在什么阶段。</p>
+<p>​        -addHandler()，removeHandler()//跨浏览器的事件处理程序//addHandler()方法属于一个叫EventUntil()的对象，这两个方法均接受三个相同的参数，要操作的元素，事件名称和回调函数。</p>
+<p>-事件类型：(在前面加上了on-就变为了一个事件处理程序)</p>
+<p>​    -鼠标~：click-点击、dbclick-双击、mousedown-鼠标按下、mouseup-鼠标抬起、mouseover-鼠标移上、mouseout-鼠标移开、mousemove-鼠标移动</p>
+<p>​    -键盘~：keydown-按键按下的过程、keypress-键被按下、keyup-按键松开</p>
+<p>​    -HTML~：load-加载、abort-中途停止ajax请求、select-添加/触发select事件、change-添加/触发 change 事件、submit-添加/触发 submit 事件、 resize-添加/触发 resize 事件、scroll-添加/触发scroll 事件、focus-元素聚焦、blur-元素失焦</p>
+<h4 id="Bom-用于处理浏览器窗口和框架。"><a href="#Bom-用于处理浏览器窗口和框架。" class="headerlink" title="Bom:用于处理浏览器窗口和框架。"></a>Bom:用于处理浏览器窗口和框架。</h4><p>-就是对浏览器的一些window窗口的操作的一些控制。</p>
+<p>-bom对象方法：alert()-弹出警示,confirm()-确认框，返回boolean值，prompt()-输入框，返回提示框中的值，方法可以调用系统对话框向用户显示消息。</p>
+<p>-bom对象：</p>
+<p>​    -navigator：导航器对象，控制一些浏览器信息</p>
+<p>​        -appCodeName：返回浏览器的代码名</p>
+<p>​        -appName：浏览器名称    </p>
+<p>​        -appVersion：浏览器的平台和版本信息</p>
+<p>​        -cookieEnabled：指明浏览器中是否启用cookie的布尔值</p>
+<p>​        -platform：运行浏览器的操作系统平台</p>
+<p>​        -userAgent：返回由客户机发送服务的user-agent头部的值</p>
+<p>​    -screen：显示器对象</p>
+<p>​        -availHeight：显示屏幕可用高度</p>
+<p>​        -availWidth：显示屏幕可用宽度</p>
+<p>​        -height：屏幕的像素高度</p>
+<p>​        -width：屏幕的像素宽度</p>
+<p>​        -colorDepth：屏幕颜色位数</p>
+<p>​    -history：历史对象，包含用户访问过的URL。</p>
+<p>​        -back():加载前一个url</p>
+<p>​        -forward：加载下一个url</p>
+<p>​        -go(num)：加载url表中相应的位置，-1-上一个url</p>
+<p>​    -location：与当前窗口加载的文档相关的信息。</p>
+<p>​        -属性</p>
+<p>​            -hash：设置或返回从#开始的url</p>
+<p>​            -search：从？开始的url</p>
+<p>​            -host：主机名和当前的url的端口号</p>
+<p>​            -hostname：主机名</p>
+<p>​            -port：端口号</p>
+<p>​            -pathname：路径</p>
+<p>​            -protocol：当前url的协议</p>
+<p>​            -href：设置或返回完整的url</p>
+<p>​        -方法</p>
+<p>​            -assign(url)：加载新文档</p>
+<p>​            -reload：重新加载当前文档</p>
+<p>​            -replace：用新的文档代替当前文档</p>
+<p>​    -document：文档对象</p>
+<p>​            -方法：</p>
+<p>​                -open：打开新的，擦除旧的</p>
+<p>​                -close：关闭文档输出流</p>
+<p>​                -write：向当前文档追加写入文本</p>
+<p>​                -writeIn：同上，但会换行</p>
+<p>​    <img src="https://p.ssl.qhimg.com/t016c684c2c50e6468a.gif" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/07/dom%E5%92%8Cbom/" data-id="ckdkezj7b00022fnm25q3bi8t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-git基础操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/07/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2020-08-07T15:58:53.369Z" itemprop="datePublished">2020-08-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    git     查看是否存在及版本  </p>
+<p>​    git init     把目录变成github可以管理的仓库</p>
+<p>​    git add 文件名     把工作区的文件添加到github仓库的暂存区</p>
+<p>​    git commit -m “本次提交说明”     把暂存区的文件提交给分支。可add多次再一次commit     一步到位：git commit -am “本次提交说明”</p>
+<p>​    git status     查看仓库状态</p>
+<p>​    git diff 文件名     查看与上次提交的有什么不同 （Mac上一般使用vscode或者 sourceTree来查看版本的不同。）</p>
+<p>​    git log     显示从最近到最远的提交历史</p>
+<p>​    git log –pretty=oneline     显示从最近到最远的提交日志的版本号</p>
+<p>​    git log –graph     看到分支合并图</p>
+<p>​    git reset –hard HEAD^或commit_id     git中用HEAD表示当前版本，HEAD^上一个版本，HEAD^^上上个版本；版本号写前几位就可以</p>
+<p>​    git reflog     查看每条历史命令</p>
+<p>​    git restore 文件名     丢弃工作区的改动</p>
+<p>​    git reset HEAD 文件名     把暂存区的修改撤销掉，重新放回工作区</p>
+<p>​    git remote add origin <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#46;&#x63;&#111;&#x6d;">&#x67;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#46;&#x63;&#111;&#x6d;</a>:我的github账户名/远程上要用的空仓库名.git     把本地仓库的内容推送到GitHub仓库</p>
+<p>​    git clone <a href="mailto:&#x67;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x2e;&#99;&#x6f;&#x6d;</a>:我的github账户名/远程上要用的仓库名.git     把远程库克隆到本地库</p>
+<p>​    git remote set-url origin <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x2e;&#99;&#111;&#109;</a>:新地址/仓库.git     更改远程仓库新指向</p>
+<p>​    git push     把本地库的内容推送到远程</p>
+<p>​    git push 远程主机名 本地分支名:远程分支名     把本地分支的内容推送到远程指定分支</p>
+<p>​    git checkout -b 分支名     创建分支并切换</p>
+<p>​    git switch -c 分支名     创建分支并切换。相当于git branch 分支名（创建分支） + git checkout 分支名（切换分支）/ git switch 分支名</p>
+<p>​    git branch     查看当前分支  -a显示所有分支  -r显示远程分支  -d删除分支  -D 强行删除分支</p>
+<p>​    git merge 分支名     合并指定分支（写的分支名）到当前分支</p>
+<p>​    git branch -d 分支名     删除制定分支（写的分支名）</p>
+<p>​    git fetch 远程主机名      将某个远程主机的更新全部取回本地</p>
+<p>​    git fetch 远程主机名 分支名     只想取回特定分支的更新</p>
+<p>​    git pull 远程主机名 远程分支名:本地分支名     将远程主机的某个分支的更新取回，并与本地指定的分支合并（如果远程分支是与当前分支合并，则冒号后面的部分可以省略）</p>
+<p>​    git pull相当于  git fetch origin master   //从远程主机的master分支拉取最新内容</p>
+<p>  git merge FETCH_HEAD    //将拉取下来的最新内容合并到当前所在的分支中</p>
+<p>​    git merge 分支名     合并分支上的内容到本地来</p>
+<p>​    注：拉取后也要push，时刻铭记远程-本地-远程的原则</p>
+<h4 id="开发步骤："><a href="#开发步骤：" class="headerlink" title="开发步骤："></a>开发步骤：</h4><p>​    1：克隆代码     git clone <a href="mailto:&#103;&#x69;&#x74;&#64;&#x67;&#105;&#x74;&#x2e;&#99;&#x6f;&#109;">&#103;&#x69;&#x74;&#64;&#x67;&#105;&#x74;&#x2e;&#99;&#x6f;&#109;</a>:我的github账户名/远程上要用的仓库名.git</p>
+<p>​    2：查看所有分支     git branch –all </p>
+<p>​    3：创建本地新的dev分支     git branch 分支名   #创建本地分支</p>
+<p>​    4：发布dev分支     git push origin dev:dev  #同步dev分支的代码到远程服务器，这样远程仓库也有一个dev分支了。</p>
+<p>​    5：在dev分支开发代码</p>
+<p>​      git checkout dev  # 切换到dev分支进行开发</p>
+<p>​      # 开发代码之后，我们有两个选择</p>
+<p>​      # 第一个：如果功能开发完成了，可以合并主分支</p>
+<p>​      git checkout master  # 切换到主分支</p>
+<p>​      git merge dev  # 把dev分支的更改和master合并</p>
+<p>​      git push  # 提交主分支代码远程</p>
+<p>​      git checkout dev  # 切换到dev远程分支</p>
+<p>​      git push  # 提交dev分支到远程</p>
+<p>​      # 第二个：如果功能没有完成，可以直接推送</p>
+<p>​      git push  # 提交到dev远程分支</p>
+<p>​      # 注意：在分支切换之前最好先commit全部的改变，除非你真的知道自己在做什么。</p>
+<p>​    6：删除分支</p>
+<p>​      git push origin :dev  # 删除远程dev分支，危险命令哦</p>
+<p>​      # 下面两条是删除本地分支</p>
+<p>​      git checkout master  # 切换到master分支</p>
+<p>​      git branch -d dev  # 删除本地dev分支</p>
+<h4 id="新建自己的git仓库："><a href="#新建自己的git仓库：" class="headerlink" title="新建自己的git仓库："></a>新建自己的git仓库：</h4><p>  1：mkdir 文件名 –  创建新文件  cd去到当前文件的路径下，使用pwd检查文件路径。</p>
+<p>  2：初始化  当前路径下 git init 把当前目录变成git可以管理的仓库</p>
+<p>  3：添加文件   使用git add + 文件名，将文件添加到仓库。（添加到仓库的暂存区）</p>
+<p>​     提交文件   使用git commit -m +文件提交情况说明，将文件提交到仓库。。可add(将文件添加到暂存区中)多次再一次commit（提交到分支上）     一步到位：git commit -am “本次提交说明”</p>
+<p>  4:查看修改状况   git status  如果有更改，会显示 modified</p>
+<p>​      不记得修改了哪里，就可以使用source tree来查看对比上次提交修改了哪些地方。 </p>
+<p>  5:版本检查：source tree中的分支可以直接查看提交的版本。（git log）</p>
+<p>  6:文件版本退回：git reset –        退回后，新加的版本就没有了，但是可以通过hard找回  git reset –hard HEAD  （指向当前版本）</p>
+<p>​      git中用HEAD表示当前版本，HEAD^上一个版本，HEAD^^上上个版本；版本号写前几位就可以</p>
+<p>  7:删除文本：git rm + 文件名   恢复是？？？checkout 为什么没有用</p>
+<p>  8:创建公钥</p>
+<p>  9:在github上创建一个远程库，然后使用git remote add origin <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>:用户名/仓库名.git</p>
+<p>  与远程的仓库链接。      第一次再使用git push -u origin master，把前面推进仓库的文件发送到远程仓库去。</p>
+<p>*master是git为我们自动创建的第一条分支。</p>
+<p>*nvm alias default 8.12.0 //设置默认的node版本（以后都不用改的那种）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/07/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" data-id="ckdkezj7c00032fnmhim34c9p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/07/hello-world/" class="article-date">
+  <time datetime="2020-08-07T15:58:53.369Z" itemprop="datePublished">2020-08-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/07/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/07/hello-world/" data-id="ckdkezj7d00042fnmed8dhjq6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js数据结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/07/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="article-date">
+  <time datetime="2020-08-07T15:58:53.369Z" itemprop="datePublished">2020-08-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h2><h5 id="方法："><a href="#方法：" class="headerlink" title="-方法："></a>-方法：</h5><p>​    -splice(index,number)/(start,end,添加的元素)</p>
+<p>​    -数组合并：-concat()–拼接，创建一个新数组</p>
+<p>​    -迭代器函数(有for循环的函数)：</p>
+<p>​        -every(过滤器函数):迭代数组中的每一个函数，直到出现false。</p>
+<p>​        -some:同every相反，直到返回true。</p>
+<p>​        -forEach():和使用for相同。</p>
+<p>​        -map():创建了新数组，每一个都迭代。</p>
+<p>​        -filter():创建新数组，只存放返回值是true的那个。</p>
+<p>​        -reduce(function(preV,curV,idx,arr)):内部函数会返回一个叠加到累加器的值。常用于数组所有元素求和。</p>
+<p>​    -join():将数组元素连接成串。</p>
+<p>​    -indexOf():输出与搜索值相同的第一个值的索引。</p>
+<p>​    -reverse:翻转数组/字符串。</p>
+<p>​    -valueOf:将数组作为字符串返回。</p>
+<p>​    -sort:可以自定排序顺序，a-b按照降序排？</p>
+<p>​    -</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/07/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" data-id="ckdkezj7e00052fnmf4460mog" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux指令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/07/linux%E6%8C%87%E4%BB%A4/" class="article-date">
+  <time datetime="2020-08-07T15:58:53.369Z" itemprop="datePublished">2020-08-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="linux命令："><a href="#linux命令：" class="headerlink" title="linux命令："></a>linux命令：</h4><p>​    -pwd-查看用户的当前目录</p>
+<p>​    -cd -切换目录   .当前目录 ..退去上级目录 ~主目录  -cd前的目录(使用tab可以补全输入命令)</p>
+<p>​    -绝对路径（有/）与相对路径：相对是相对当前目录来说的。 去往不同的路径时使用绝对。</p>
+<p>​    -ls-显示当前目录信息(只显示普通文件)  stat-显示文件详细信息  ls -ah:查看隐藏目录</p>
+<p>​        -a：可显示隐藏文件</p>
+<p>​        -l：使用长格式列出文件</p>
+<p>​        -t：根据最后修改时间改变</p>
+<p>​        -ltr s*：列出所有开头是s的文件</p>
+<p>​    -mkdir[参数]-[目录]-在当前目录下，创建一个空目录</p>
+<p>​        -p：创建多级目录</p>
+<p>​        -v：显示目录的常见过程</p>
+<p>​    -rmdir-删除当前目录</p>
+<p>​    -touch-创建一个任意格式的文件 记得加后缀</p>
+<p>​    -cp-复制文件。cp[参数]-[文件]（还有很多的option）</p>
+<p>​        -f [文件]-[文件重命名]：复制直接覆盖原文件</p>
+<p>​        -i：会询问是否覆盖</p>
+<p>​        -v：显示cp的执行过程</p>
+<p>​        -R：复制目录</p>
+<p>​        -r：一次复制多个文件</p>
+<p>​    -mv 文件+移去目录：移动文件 </p>
+<p>​        -i：存在同名文件，则会询问是否覆盖</p>
+<p>​    -cat-查看文本文件的内容</p>
+<p>​        -n：加行号显示</p>
+<p>​    -more：查看内容长的文本</p>
+<p>​    -echo-文件重定向，有则打开，无则创建</p>
+<p>​    -gzip,bzip2,tar -czvf,-文件压缩命令</p>
+<p>​    -gzip -d,bzip2 -d,tar -xzvf,-解压命令</p>
+<p>​    -man -显示命令的使用 q用来退出</p>
+<p>​    -clear-清空屏幕</p>
+<p>​    -kill-杀死进程， 用ps（静态进程快照）top（动态进程）查找进程，然后kill+pid    sudo lsof -i :端口 -查找响应的端口号(kill也要加sudo)</p>
+<p>​    -alias-对命令重命名 别名=指令名</p>
+<p>​    -ssh[参数]-[主机]：登录远程服务器。给予ssh加密协议实现安全的远程登录服务器，实现对服务器的管理</p>
+<p>​        -1/2：强制使用 ssh 协议版本 1/2</p>
+<p>​        -4/6：强制使用 ipv4/6 地址</p>
+<p>​        -f：后台执行ssh指令</p>
+<p>​        -l&lt;登录名&gt;：指定连接远程服务器的登录用户名</p>
+<p>​        -p&lt;端口&gt;：指定远程服务器上的端口</p>
+<p>​    -vim </p>
+<p>​       - vi+文件名-进入文件 按s进入insert开始修改，修改完成后按一下esc调出vi命令，输入:wq保存并退出vi模式。</p>
+<p>shell:是一个用shell编写的脚本程序</p>
+<p>​      有许多种类：bash，dash，zsh等</p>
+<p>​      bash：（默认）有很灵活和强大的编程接口，同时又有很友好的用户界面。功能包括命令补齐、通配符、命令历史记录、别名等。</p>
+<p>​      dash：bash的弟弟，功能没有bash多。</p>
+<p>​      zsh：最新的，所有shell的集合+增加功能。改进的shell选项处理、shell兼容性模式以及可加载模块。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/07/linux%E6%8C%87%E4%BB%A4/" data-id="ckdkezj7f00062fnmhdgtedqi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -757,23 +845,23 @@
       <ul>
         
           <li>
-            <a href="/2020/08/06/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">(no title)</a>
+            <a href="/2020/08/07/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/06/hello-world/">Hello World</a>
+            <a href="/2020/08/07/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/06/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">(no title)</a>
+            <a href="/2020/08/07/vue%E5%AD%A6%E4%B9%A0/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/06/linux%E6%8C%87%E4%BB%A4/">(no title)</a>
+            <a href="/2020/08/07/CSS%E5%9F%BA%E7%A1%80/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/06/md%E7%9A%84%E4%BD%BF%E7%94%A8/">(no title)</a>
+            <a href="/2020/08/07/curl/">(no title)</a>
           </li>
         
       </ul>

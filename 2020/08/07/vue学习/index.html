@@ -10,12 +10,12 @@
   <meta name="description" content="vue学习:基本知识：​        -&lt;!–￼0–&gt;—文本或数据显示的地方，里面只运行js代码，纯js代码也可以运行。      -标签有的指令：  ​                 -v-html—可以显示数据中带有标签的，标签内的部分部分。标签内按照样式显示。 ​                 -v-text—把标签也输出，也没有相应的标签效果。 ​        -v-s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2020/08/06/vue%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/08/07/vue%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="vue学习:基本知识：​        -&lt;!–￼0–&gt;—文本或数据显示的地方，里面只运行js代码，纯js代码也可以运行。      -标签有的指令：  ​                 -v-html—可以显示数据中带有标签的，标签内的部分部分。标签内按照样式显示。 ​                 -v-text—把标签也输出，也没有相应的标签效果。 ​        -v-s">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-06T11:21:52.957Z">
-<meta property="article:modified_time" content="2020-08-06T11:21:52.957Z">
+<meta property="article:published_time" content="2020-08-07T15:58:53.373Z">
+<meta property="article:modified_time" content="2020-08-07T15:58:53.373Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -68,8 +68,8 @@
       <div class="outer">
         <section id="main"><article id="post-vue学习" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/08/06/vue%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time datetime="2020-08-06T11:21:52.957Z" itemprop="datePublished">2020-08-06</time>
+    <a href="/2020/08/07/vue%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2020-08-07T15:58:53.373Z" itemprop="datePublished">2020-08-07</time>
 </a>
     
   </div>
@@ -163,29 +163,44 @@
 <p>–组件中  child = perent.$refs.profile(child是perent中所有dom节点的集合，标识就是profile)</p>
 <p>表单验证：validate()</p>
 <p>​    p=this.$refs.form.validate()  submit过来的从上面传来的表单值，是否有效，p.then.</p>
-<h5 id="vue-router："><a href="#vue-router：" class="headerlink" title="vue-router："></a>vue-router：</h5><p>-核心：改变url，但是页面不进行整体的刷新。</p>
-<p>-路由规则：hash和history</p>
+<h5 id="vue-router："><a href="#vue-router：" class="headerlink" title="vue-router："></a>vue-router：</h5><p>-<strong>核心：</strong>改变url，但是页面不进行整体的刷新。结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。</p>
+<p>-<strong>路由规则：</strong>hash和history</p>
 <p>​    -hash：#=锚点，本质是改变window.location的href属性。可以直接赋值location.hash改变href，但页面不刷新。</p>
-<p>​    -history：可以改变url而不刷新页面。</p>
+<p>​    -history：可以改变url而不刷新页面。(比较新，IE9之前不能使用，所以hash更加通用一些)</p>
 <p>​        -history.pushState()：类似栈，有进有出</p>
-<p>​        -history.replaceState()：替换url，没有退回</p>
+<p>​        -history.replaceState()：替换url，没有退回(常用的)</p>
 <p>​        -history.back()</p>
 <p>​        -history.forward()</p>
 <p>​        -history.go(num)</p>
-<p>-使用：结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。</p>
-<p>-步骤：</p>
+<p>-<strong>路由分类：</strong></p>
+<p>​    -动态路由：path:’/user/:id’ .以冒号开头，只要前缀相同就都能映射到相同的路由上去。</p>
+<p>​    -嵌套路由：有同一个父路由的路由。在普通路由配置的时候加入一个children：[{其他路由}]</p>
+<p>​    -命名路由：给路由加一个name，在使用router-link :to=”{ name：‘xx’，params：{xx}}” name是前半段，params是后半段。跳转的路径是/xx/xx.</p>
+<p>-<strong>路由视图：</strong><router-view></router-view> –必须有，相当于是在页面中给路由站了一个位置。</p>
+<p>-props：在路由中加入props参数，可以将组件和路由解耦，这样使的组件更易重用和测试。<strong>设置：</strong>props：true 。这样就会将route.params设置为组件属性（???）—传参这里有很大的问题。</p>
+<p>-<strong>步骤：</strong></p>
 <p>1：定义路由或者从别处引入，<script src="./vue-router.js"></script>。</p>
 <p>2:准备路由所需要的组件。(能够跳转的块)。</p>
-<p>3：创建路由对象，在对象中配置路由规则 var routes=new VueRouter({ path:’/foo’,component:Foo })。(这三个值是必备的)</p>
+<p>3：创建路由对象，在对象中配置路由规则 var routes=new VueRouter({ path:’/foo’,component:Foo })。（这两值必备，name可有可无）</p>
 <p>4：在vue中注入路由。vue实例中，加入一个router。</p>
-<p>5：通过<router-view></router-view>挖坑，路径匹配到的组件都会渲染到这个组件来。</p>
+<p>5：通过<router-view></router-view>挖坑，路径匹配到的组件都会渲染到这来。</p>
 <p>6：路由通过<router-link to="相应路由的path">跳转，这个被渲染后会变成a标签，值的前面会变成一个#，从而变成锚点。(链接的一种，就是在<a name="xxx" href="#hello">这就是在特定的xxx的地方设置了一个锚点。)</p>
-<p>-实际操作：</p>
+<p>-<strong>实际操作：</strong></p>
 <p>​    1：在组件目录下写spa，然后在router目录下使用import引入之前写的spa(使用相对路径(相对路径：./文件名表示在当前目录下。))</p>
 <p>​    2：在router目录中的index.js，的下面写入相应的路由，按照给定的模板写。引入时要注意new router的地址。import .. from ‘new router的地方’(给的模板中设置的name是用在嵌套路由上的。)</p>
 <p>​    3：在main.js中import相应的router</p>
 <p>​    4：在app.vue中加入<router-link>来定义页面中点击触发部分(定义当点击后去到的地方)<router-view>来在页面中显示。</p>
-<p>​    5:添加重定向和单独配置路由</p>
+<p>​    5：重定向-就是在路由中一定要加一个路由，指向有的页面（用户输入了不存在的路由，跳转到有用的页面去）两种写法：1：path:’<em>‘,redirect:’/组件’ 2：path:’\</em>‘,redirect:{name:’组件’}。</p>
+<p>-<strong>路由守卫：</strong> 就是在路由的基础上添加了钩子函数    </p>
+<p>​    -全局前置守卫：router.beforeEach((to,from,next)=&gt;{})  to=即将进入的目标路由对象-到哪去。from=当前要离开的路由-从哪来。next=function，一定要调用这里的方法，来resolve这个钩子。next函数中的参数，会影响执行效果。【无参-&gt;进行下一个钩子，如果全都执行完了，那么导航的状态就是confirmed。false-&gt;中断当前的导航。在正在改变url的过程中，那么url地址会重置到from路由对应的地址。’/‘-&gt;跳转到不同的地址。中断正在跳转的地址，然后去一个新的地址。(可以传递任意函数？？？)。error-&gt;导航过程会被终止，并且错误会传去router.onError()注册过的回调中去。】</p>
+<p>​    -全局解析守卫：router.beforeResolve()=和上面类似。区别：在导航被确认之前，同时在all component内守卫，和异步路由组件被解析之后，解析守卫被调用。</p>
+<p>​    -全局后置钩子：router.afterEach((to,from)=&gt;{})。没有next，不会改变导航本身。</p>
+<p>-<strong>导航解析流程：</strong> (导航：路由正在跳转的过程)</p>
+<p>触发导航 -&gt; 在失活的组件里调用 <code>beforeRouteLeave</code> 守卫。(失活的组件就是要被离开的组件)-&gt;调用全局的 <code>beforeEach</code> 守卫。(在导航前)-&gt;在重用的组件里调用 <code>beforeRouteUpdate</code>(路由改变，组件被复用时调用)-&gt;在路由配置里调用 <code>beforeEnter</code>-&gt;解析异步路由组件-&gt;在被激活的组件里调用 <code>beforeRouteEnter</code>-&gt;调用全局的 <code>beforeResolve</code>-&gt;导航被确认-&gt;调用全局的 <code>afterEach</code> 钩子-&gt;触发 DOM 更新-&gt;调用 <code>beforeRouteEnter</code> 守卫中传给 <code>next</code> 的回调函数，创建好的组件实例会作为回调函数的参数传入</p>
+<p>-元信息：</p>
+<p>-<strong>过渡动效：</strong> 加入一个<transition></transition> 来实现切换路由时中间的过渡动画。</p>
+<p>-<strong>数据获取：</strong> 两种，导航完成<strong>前</strong>-在路由进入的守卫中获取数据，获取数据之后再进行导航/<strong>后</strong>-先导航，结束后在组件的生命周期钩子中获取数据。</p>
+<p>-<strong>滚动行为：</strong> 控制页面来回回滚后，前的滚动条进度保持的位置。<strong>使用：</strong> 给router实例中，加入一个scrollBehavior(to, from, savePosition)方法。</p>
 <h5 id="路由参数："><a href="#路由参数：" class="headerlink" title="路由参数："></a>路由参数：</h5><p>-router传递参数：使用上面的那个router-link</p>
 <p>-接受参数：</p>
 <p>​    -组件接收：在html中获取路由参数, 通过$route.params.参数名</p>
@@ -193,7 +208,16 @@
 <p>​    -js接收：在js中获取路由参数, 通过this.$route.params.参数名</p>
 <p><code>var productType = Vue.component(&#39;productType&#39;,&#123;</code><br>    <code>//在html中获取路由参数, 通过$route.params.参数名</code><br>    <code>template:&#39;&lt;div&gt;这里显示商品编号&#123;&#123;$route.params.id&#125;&#125;&lt;/div&gt;&#39;,</code><br>    <code>//模板编译完成之后调用</code><br>    <code>mounted() &#123;</code><br>        <code>//在js中获取路由参数, 通过this.$route.params.参数名</code><br>        <code>console.log(this.$route.params.id)</code><br>    <code>&#125;,</code><br><code>&#125;)</code></p>
 <p>-响应路由的参数变化：</p>
-<h5 id="vuex："><a href="#vuex：" class="headerlink" title="vuex："></a>vuex：</h5><p>-专门为vue.js开发的状态管理模式，集中管理所有组件的状态</p>
+<h5 id="vuex："><a href="#vuex：" class="headerlink" title="vuex："></a>vuex：</h5><p>-专门为vue.js开发的状态管理模式，集中管理所有组件的状态。</p>
+<p>state–大树的树干–共用的数据，不同的组件就像树的分叉，会使用树的一部分数据，但是会根据自己做出一些调整。这个调整可以使用mutation改变，(过程是同步的？？？—就是逻辑是同步改变的)异步逻辑都封装到action里面。</p>
+<p>-vuex部分文件：api-里面会放一些抽出来的api请求，与后台交互的请求响应代码。？？？   Component-放一些单页面组件，store-index.js=组装模块并导出store的地方，actions.js=根级别的action，mutation.js=跟级别的mutation。modules-中存放着各种模块（这种模块中放的是什么）</p>
+<p>-一个模块中，要创建state，mutation，action，getter</p>
+<p>-<strong>state：</strong>在vue实例中，可以通过this.$store.state.data(可换，数据名，来访问到store中的数据)。当一个组件需要获取多个状态时(数据???)将这些状态都声明在计算中会冗余，这时候，可以使用mapState辅助函数—生成计算数据。（就是在computed中写了一个mapState函数，将上面的参数简化。）</p>
+<p>-<strong>getter：</strong> state的计算属性，就像vue中的computed一样，返回值也会根据他的依赖被缓存起来，依赖值改变才会改变。getter会暴露一个  store.getter的对象，(数据在getter中被计算，我们可以使用store.getter来直接调用这些数据)在getter中也能接受其他的getter的参数。</p>
+<p>-<strong>actions：</strong> state中出来的数据，action要来取数据，然后action中取完的数据（使用commit，其中有两个参数，事件，(???回调函数吗，是什么)）才能再使用mutation来修改里面的值。action 提交的是mutation，而不是直接改变状态。有它的原因就是为了可以在成功和失败两个状态之间横跳。可以使用promise 也可以使用async/await</p>
+<p>-<strong>mutation：</strong> 改变store中的状态，(就像是在原有的树枝上长出一截新的树枝。)有事件和回调函数。(我现在的理解就是他就像java里面的那个函数重写一样，在原有的基础上给原来的增加一些方法)</p>
+<p>-new store-创建实例，其中必备state来存放一个大的共享数据，</p>
+<p>state写数据-&gt;要改变数据状态-&gt;action提交mutation-&gt;mutation直接改变数据。</p>
 <p>Q:1：v-model绑定，循环渲染的时候value怎么设置。</p>
 <p>2：ref，prop的具体区别，实际使用的时候呢</p>
 <p>3:fx-cascader中的数据怎么传</p>
@@ -202,7 +226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/vue%E5%AD%A6%E4%B9%A0/" data-id="ckdipnf17000a32wg77qj7jcz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/07/vue%E5%AD%A6%E4%B9%A0/" data-id="ckdkezj7s000c2fnm1w0ohxcg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -211,7 +235,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/08/06/npm%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/07/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -221,7 +245,7 @@
     </a>
   
   
-    <a href="/2020/08/06/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/08/07/CSS%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title"></div>
     </a>
@@ -260,23 +284,23 @@
       <ul>
         
           <li>
-            <a href="/2020/08/06/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">(no title)</a>
+            <a href="/2020/08/07/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/06/hello-world/">Hello World</a>
+            <a href="/2020/08/07/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/06/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">(no title)</a>
+            <a href="/2020/08/07/vue%E5%AD%A6%E4%B9%A0/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/06/linux%E6%8C%87%E4%BB%A4/">(no title)</a>
+            <a href="/2020/08/07/CSS%E5%9F%BA%E7%A1%80/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2020/08/06/md%E7%9A%84%E4%BD%BF%E7%94%A8/">(no title)</a>
+            <a href="/2020/08/07/curl/">(no title)</a>
           </li>
         
       </ul>
