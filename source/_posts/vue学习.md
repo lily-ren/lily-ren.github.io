@@ -212,17 +212,17 @@ ref  $refs:
 
 ##### vue-router：
 
--核心：改变url，但是页面不进行整体的刷新。
+-**核心：**改变url，但是页面不进行整体的刷新。结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。
 
--路由规则：hash和history
+-**路由规则：**hash和history
 
 ​	-hash：#=锚点，本质是改变window.location的href属性。可以直接赋值location.hash改变href，但页面不刷新。
 
-​	-history：可以改变url而不刷新页面。
+​	-history：可以改变url而不刷新页面。(比较新，IE9之前不能使用，所以hash更加通用一些)
 
 ​		-history.pushState()：类似栈，有进有出
 
-​		-history.replaceState()：替换url，没有退回
+​		-history.replaceState()：替换url，没有退回(常用的)
 
 ​		-history.back()
 
@@ -230,25 +230,33 @@ ref  $refs:
 
 ​		-history.go(num)
 
--使用：结合vue.js来创建单页应用。   可以通过组合组件来组成应用程序，当把路由加入后，只需要将组件映射到路由，然后告诉路由在哪里渲染。
+-**路由分类：**
 
--步骤：
+​	-动态路由：path:'/user/:id' .以冒号开头，只要前缀相同就都能映射到相同的路由上去。
+
+​	-嵌套路由：有同一个父路由的路由。在普通路由配置的时候加入一个children：[{其他路由}]
+
+​	-命名路由：给路由加一个name，在使用router-link :to="{ name：‘xx’，params：{xx}}" name是前半段，params是后半段。跳转的路径是/xx/xx.
+
+-**路由视图：**<router-view></router-view> --必须有，相当于是在页面中给路由站了一个位置。
+
+-props：在路由中加入props参数，可以将组件和路由解耦，这样使的组件更易重用和测试。**设置：**props：true 。这样就会将route.params设置为组件属性（???）---传参这里有很大的问题。
+
+-**步骤：**
 
 1：定义路由或者从别处引入，<script src="./vue-router.js"></script>。
 
 2:准备路由所需要的组件。(能够跳转的块)。
 
-3：创建路由对象，在对象中配置路由规则 var routes=new VueRouter({ path:'/foo',component:Foo })。(这三个值是必备的)
+3：创建路由对象，在对象中配置路由规则 var routes=new VueRouter({ path:'/foo',component:Foo })。（这两值必备，name可有可无）
 
 4：在vue中注入路由。vue实例中，加入一个router。
 
-5：通过<router-view></router-view>挖坑，路径匹配到的组件都会渲染到这个组件来。
+5：通过<router-view></router-view>挖坑，路径匹配到的组件都会渲染到这来。
 
 6：路由通过<router-link to="相应路由的path">跳转，这个被渲染后会变成a标签，值的前面会变成一个#，从而变成锚点。(链接的一种，就是在<a name="xxx" href="#hello">这就是在特定的xxx的地方设置了一个锚点。)
 
-
-
--实际操作：
+-**实际操作：**
 
 ​	1：在组件目录下写spa，然后在router目录下使用import引入之前写的spa(使用相对路径(相对路径：./文件名表示在当前目录下。))
 
@@ -258,7 +266,27 @@ ref  $refs:
 
 ​	4：在app.vue中加入<router-link>来定义页面中点击触发部分(定义当点击后去到的地方)<router-view>来在页面中显示。
 
-​	5:添加重定向和单独配置路由
+​	5：重定向-就是在路由中一定要加一个路由，指向有的页面（用户输入了不存在的路由，跳转到有用的页面去）两种写法：1：path:'*',redirect:'/组件' 2：path:'\*',redirect:{name:'组件'}。
+
+-**路由守卫：** 就是在路由的基础上添加了钩子函数	
+
+​	-全局前置守卫：router.beforeEach((to,from,next)=>{})  to=即将进入的目标路由对象-到哪去。from=当前要离开的路由-从哪来。next=function，一定要调用这里的方法，来resolve这个钩子。next函数中的参数，会影响执行效果。【无参->进行下一个钩子，如果全都执行完了，那么导航的状态就是confirmed。false->中断当前的导航。在正在改变url的过程中，那么url地址会重置到from路由对应的地址。'/'->跳转到不同的地址。中断正在跳转的地址，然后去一个新的地址。(可以传递任意函数？？？)。error->导航过程会被终止，并且错误会传去router.onError()注册过的回调中去。】
+
+​	-全局解析守卫：router.beforeResolve()=和上面类似。区别：在导航被确认之前，同时在all component内守卫，和异步路由组件被解析之后，解析守卫被调用。
+
+​	-全局后置钩子：router.afterEach((to,from)=>{})。没有next，不会改变导航本身。
+
+-**导航解析流程：** (导航：路由正在跳转的过程)
+
+触发导航 -> 在失活的组件里调用 `beforeRouteLeave` 守卫。(失活的组件就是要被离开的组件)->调用全局的 `beforeEach` 守卫。(在导航前)->在重用的组件里调用 `beforeRouteUpdate`(路由改变，组件被复用时调用)->在路由配置里调用 `beforeEnter`->解析异步路由组件->在被激活的组件里调用 `beforeRouteEnter`->调用全局的 `beforeResolve`->导航被确认->调用全局的 `afterEach` 钩子->触发 DOM 更新->调用 `beforeRouteEnter` 守卫中传给 `next` 的回调函数，创建好的组件实例会作为回调函数的参数传入
+
+-元信息：
+
+-**过渡动效：** 加入一个<transition></transition> 来实现切换路由时中间的过渡动画。
+
+-**数据获取：** 两种，导航完成**前**-在路由进入的守卫中获取数据，获取数据之后再进行导航/**后**-先导航，结束后在组件的生命周期钩子中获取数据。
+
+-**滚动行为：** 控制页面来回回滚后，前的滚动条进度保持的位置。**使用：** 给router实例中，加入一个scrollBehavior(to, from, savePosition)方法。
 
 ##### 路由参数：
 
@@ -289,7 +317,25 @@ ref  $refs:
 
 ##### vuex：
 
--专门为vue.js开发的状态管理模式，集中管理所有组件的状态
+-专门为vue.js开发的状态管理模式，集中管理所有组件的状态。
+
+state--大树的树干--共用的数据，不同的组件就像树的分叉，会使用树的一部分数据，但是会根据自己做出一些调整。这个调整可以使用mutation改变，(过程是同步的？？？---就是逻辑是同步改变的)异步逻辑都封装到action里面。
+
+-vuex部分文件：api-里面会放一些抽出来的api请求，与后台交互的请求响应代码。？？？   Component-放一些单页面组件，store-index.js=组装模块并导出store的地方，actions.js=根级别的action，mutation.js=跟级别的mutation。modules-中存放着各种模块（这种模块中放的是什么）
+
+-一个模块中，要创建state，mutation，action，getter
+
+-**state：**在vue实例中，可以通过this.$store.state.data(可换，数据名，来访问到store中的数据)。当一个组件需要获取多个状态时(数据???)将这些状态都声明在计算中会冗余，这时候，可以使用mapState辅助函数---生成计算数据。（就是在computed中写了一个mapState函数，将上面的参数简化。）
+
+-**getter：** state的计算属性，就像vue中的computed一样，返回值也会根据他的依赖被缓存起来，依赖值改变才会改变。getter会暴露一个  store.getter的对象，(数据在getter中被计算，我们可以使用store.getter来直接调用这些数据)在getter中也能接受其他的getter的参数。
+
+-**actions：** state中出来的数据，action要来取数据，然后action中取完的数据（使用commit，其中有两个参数，事件，(???回调函数吗，是什么)）才能再使用mutation来修改里面的值。action 提交的是mutation，而不是直接改变状态。有它的原因就是为了可以在成功和失败两个状态之间横跳。可以使用promise 也可以使用async/await
+
+-**mutation：** 改变store中的状态，(就像是在原有的树枝上长出一截新的树枝。)有事件和回调函数。(我现在的理解就是他就像java里面的那个函数重写一样，在原有的基础上给原来的增加一些方法)
+
+-new store-创建实例，其中必备state来存放一个大的共享数据，
+
+state写数据->要改变数据状态->action提交mutation->mutation直接改变数据。
 
 
 
