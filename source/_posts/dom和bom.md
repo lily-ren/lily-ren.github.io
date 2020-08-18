@@ -114,6 +114,16 @@ div.dataset//?
 
 ​	-HTML~：load-加载、abort-中途停止ajax请求、select-添加/触发select事件、change-添加/触发 change 事件、submit-添加/触发 submit 事件、 resize-添加/触发 resize 事件、scroll-添加/触发scroll 事件、focus-元素聚焦、blur-元素失焦
 
+
+
+
+
+
+
+
+
+​	
+
 #### Bom:用于处理浏览器窗口和框架。
 
 -就是对浏览器的一些window窗口的操作的一些控制。

@@ -58,11 +58,11 @@
 
 布局：	
 
--flex布局：只要设置display：flex
+-flex布局：对div这种块级元素 设置display：flex   对于span这种行内元素，设置display：inline-flex；
 
 ​	-一些属性：flex-direction-盒子的排列方向，flex-wrap-控制是否换行（这两个可以合并使用一个flex-flow）justify-content-盒子内元素在横轴方向上的对齐方式，align-items-多行的flex容器，在纵轴上的对齐方式（这两个可以合并使用一个align-contant）
 
-​	-flex项目属性(对一个小格子的控制)：order：数字-用来个盒子进行编号。flex-grow：默认值是0，多余空间不分配。flex-shrink：默认值是1，空间不足要分配。他两的作用：项目在多余的空间中如何放大缩小。flex-basis：默认值是auto，指定项目的初始大小。(在一个flex中可以设置前面三个值。)align-self：控制单个项目沿着纵轴上的方向。
+​	-flex项目属性(对一个小格子的控制)：order：数字-用来个盒子进行编号。flex-grow：默认值是0，多余空间不分配。flex-shrink：默认值是1，空间不足要分配。他两的作用：项目在多余的空间中如何放大缩小。flex-basis：默认值是auto，指定项目的初始大小。(在一个flex中可以设置前面三个值。) align-self：控制单个项目沿着纵轴上的方向。
 
 ​	-上面三个属性的默认值就是说，一个flex在改变屏幕扩大时不会缩小，扩大时会扩大，但是以上操作都是可auto调节的。
 
