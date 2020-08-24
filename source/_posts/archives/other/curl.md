@@ -1,3 +1,7 @@
+---
+title: curl
+tag: 杂项
+---
 -curl-command line url viewer。一个命令行工具。发出网络请求，然后得到和提取数据。
 
 -使用：

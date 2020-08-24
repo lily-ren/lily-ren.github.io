@@ -1,3 +1,7 @@
+---
+title: linux命令
+tag: linux
+---
 #### linux命令：
 
 ​    -pwd-查看用户的当前目录	

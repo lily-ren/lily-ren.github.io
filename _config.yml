@@ -2,13 +2,13 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Site
-title: Hexo
+# Site hexo项目的信息
+title: '啊！你找到我啦！'
 subtitle: ''
-description: ''
+description: '日常记录，一起学习'
 keywords:
-author: John Doe
-language: en
+author: '=_=初级小菜鸡'
+language: zh-CN
 timezone: ''
 
 # URL
@@ -98,7 +98,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: butterfly
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
