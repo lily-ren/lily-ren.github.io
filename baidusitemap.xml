@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/2020/08/25/archives/linux%E6%8C%87%E4%BB%A4/</loc>
-    <lastmod>2020-08-25</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/2020/08/25/archives/git/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2020-08-25</lastmod>
-  </url>
-  <url>
     <loc>http://yoursite.com/2020/08/25/archives/other/curl/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>
@@ -50,6 +42,14 @@
   </url>
   <url>
     <loc>http://yoursite.com/2020/08/25/archives/vue%E5%85%A8%E5%AE%B6%E6%A1%B6/vue%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2020-08-25</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/2020/08/25/archives/linux%E6%8C%87%E4%BB%A4/</loc>
+    <lastmod>2020-08-25</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/2020/08/25/archives/git/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2020-08-25</lastmod>
   </url>
   <url>
