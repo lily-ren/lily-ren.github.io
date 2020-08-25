@@ -1,310 +1,111 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>啊！你找到我啦！</title><meta name="description" content="日常记录，一起学习"><meta name="author" content="=_=初级小菜鸡"><meta name="copyright" content="=_=初级小菜鸡"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/page/2/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="啊！你找到我啦！"><meta property="og:url" content="http://yoursite.com/page/2/"><meta property="og:site_name" content="啊！你找到我啦！"><meta property="og:description" content="日常记录，一起学习"><meta property="og:image" content="http://yoursite.com/img/niangao.JPG"><meta property="article:published_time" content="2020-08-25T03:22:19.753Z"><meta property="article:modified_time" content="2020-08-25T03:22:19.753Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
 
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
 
-<meta name="generator" content="Hexo 5.0.0"></head>
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-md的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/07/md%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2020-08-07T15:58:53.369Z" itemprop="datePublished">2020-08-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#-从1个到6个，表示标题的大小。</p>
-<p>*，+，-，数字-都可以用来表示列表（都是一个圆点，还可以嵌套）</p>
-<p>[名字]（url）-表示一个链接</p>
-<p> 使用点`（esc下面的那个）来把代码块框起来。</p>
-<p>！[图片名]  (url) 表示一个图片</p>
-<p>使用3个*可以变为加粗字体</p>
-<p>用三个以上的星号、减号、底线来建立一个分隔线</p>
-<p><u>    使用这个html标签来添加下划线</p>
-<p>使用&gt; 来表示一个区块，可以多个连用。依次递增表示嵌套</p>
-<p>###快捷键###</p>
-<p>-cmd+b 加粗</p>
-<p>-cmd+i 斜体</p>
-<p>-cmd+u 下划线</p>
-<p>-cmd+k 超链接</p>
-<p>-cmd+数字  标题级数</p>
-<p>-crl+` 代码块</p>
-<p>-crl+- 和html一样的注释</p>
-<h5 id="Hexo常用指令："><a href="#Hexo常用指令：" class="headerlink" title="Hexo常用指令："></a>Hexo常用指令：</h5><p>hexo g:</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/07/md%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="ckdkezj7g00072fnmck3wgfmy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-npm学习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/07/npm%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time datetime="2020-08-07T15:58:53.369Z" itemprop="datePublished">2020-08-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="npm学习总结"><a href="#npm学习总结" class="headerlink" title="npm学习总结"></a>npm学习总结</h3><h4 id="一些指令："><a href="#一些指令：" class="headerlink" title="-一些指令："></a>-一些指令：</h4><h5 id="初始化"><a href="#初始化" class="headerlink" title="-初始化:"></a>-初始化:</h5><p>​        -npm init  npm init -y (自动生成package.json)—npm i。npm i express 可以一次安装多个包。</p>
-<p>​        -npm i -g pkg：在全局安装包。</p>
-<p>​        -npm i -S(–save) pkg：安装包作为依赖。–dep</p>
-<p>​        -npm i -D(–save-dev pkg):安装包作为开发依赖。–devD</p>
-<p>​        -npm config set —初始化默认配置。还可以配置其他的源来安装js包。使用不同团队的东西之前要注意切换set的地址。<code>npm set registry http://registry-npm.firstshare.cn</code></p>
-<p>​            -npm config ls -l—查看npm内部的默认配置参数。</p>
-<p>​        -npm preinstall–客户无感知安装。 项目的 <code>package.json</code> 里增加 <code>preinstall</code> 要执行的脚本，这样合作方可以无感知的安装。</p>
-<p>​        -npm ci—全新的安装包，对package-lock.json友好。</p>
-<h5 id="运行测试："><a href="#运行测试：" class="headerlink" title="-运行测试："></a>-运行测试：</h5><p>​        -npm test（t）—</p>
-<h5 id="查看项目中可用脚本："><a href="#查看项目中可用脚本：" class="headerlink" title="-查看项目中可用脚本："></a>-查看项目中可用脚本：</h5><p>​        -cat package.json</p>
-<h5 id="npm-scripts："><a href="#npm-scripts：" class="headerlink" title="-npm scripts："></a>-npm scripts：</h5><p>​        -作用：预定义前后钩子，自定义脚本。</p>
-<p>​        -npm run env：列出项目中所有的npm环境变量</p>
-<h5 id="删除重复的包："><a href="#删除重复的包：" class="headerlink" title="-删除重复的包："></a>-删除重复的包：</h5><p>​        -npm dedupe(ddp)—删除重复的依赖项。</p>
-<h5 id="扫描应用程序中的漏洞："><a href="#扫描应用程序中的漏洞：" class="headerlink" title="-扫描应用程序中的漏洞："></a>-扫描应用程序中的漏洞：</h5><p>​        -npm audit —扫描项目中的任何依赖中的任何漏洞。npm audit fix 会自动安装所有漏洞包的补丁版本。</p>
-<h5 id="本地测试你的软件包："><a href="#本地测试你的软件包：" class="headerlink" title="-本地测试你的软件包："></a>-本地测试你的软件包：</h5><p>​        -npm link (模块名)：实现任意位置的npm模块命令的全局可执行。（不加模块名则是开发一个全局的模块。）</p>
-<h5 id="列出所有已安装的软件包："><a href="#列出所有已安装的软件包：" class="headerlink" title="-列出所有已安装的软件包："></a>-列出所有已安装的软件包：</h5><p>​        -npm list（ls）—加depth=1可以限制搜索深度。</p>
-<h5 id="拓展nrm"><a href="#拓展nrm" class="headerlink" title="-拓展nrm:"></a>-拓展nrm:</h5><p>​            -nrm ls—查看已有的npm</p>
-<p>​            -nrm add 源名称 url—添加相关源</p>
-<p>​            -nrm del 源名称—删除相关源</p>
-<p>​            -nrm use 源名称—切换相关源</p>
-<p>​            -nrm test —测试源速度</p>
-<h4 id="工程上使用到npm的地方："><a href="#工程上使用到npm的地方：" class="headerlink" title="-工程上使用到npm的地方："></a>-工程上使用到npm的地方：</h4><p>​    -node_modules目录：每个包都会将该包的依赖安装到当前包所在的<code>node_modules</code>目录中。（包要使用的依赖都会安装在里面。）从npm5.x增加了package-lock.json</p>
-<p>​    -package-lock.json的详细描述主要由version、resolved、integrity、dev、requires、dependencies这几个字段构成：</p>
-<p>​        -version—版本</p>
-<p>​        -resolved—安装源</p>
-<p>​        -interity—表明包完整性的hash值（验证包是否失效）</p>
-<p>​        -dev—如果为true，则此依赖关系仅是顶级模块的开发依赖关系或者是一个的传递依赖关系</p>
-<p>​        -requires—依赖包所需要的所有依赖项，对应依赖包<code>package.json</code>里<code>dependencies</code>中的依赖项。</p>
-<p>​        -dependencies—依赖包<code>node_modules</code>中依赖的包，与顶层的<code>dependencies</code>一样的结构</p>
-<h4 id="拓展—package-json中的配置："><a href="#拓展—package-json中的配置：" class="headerlink" title="拓展—package.json中的配置："></a>拓展—package.json中的配置：</h4><p>​    -scripts：存放一些npm run xx相关的指令。会告诉你指令相关运行时什么。也可以自定义脚本命令。（npm run有串行&amp;&amp;和并行&amp;两种）执行相应命令时都会执行Pro/post钩子函数。钩子函数中定义了命令执行前后的命令。</p>
-<p>​    -dependencies：基本依赖，写在一个简单的对象中，将依赖程序包映射到版本范围。(就是项目在线上运行时所要使用到的依赖。）</p>
-<p>​    -devDependencies：是开发时所要使用到的依赖，在线上时并不需要他们。</p>
-<p>​        -包含什么：构建工具（webpack相关:为了生成生成环境代码。线上使用的代码是他们的工作结果）预处理器（css的相关预编译器，js中的ts，coffee-script，babel等）测试工具（chai，e2e等）其他（webpack-dev-server 支持开发热加载，线上是不用的。等这样的东西。）</p>
-<p>​    -peerDependencies、bundleDependencies、optionalDependencies：作为npm包的发布者需要考虑使用的。后面再讲。</p>
-<p>​    -注意版本号前的^和~：前者被优先考虑，是会把当前库中的最新版本更新到当前使用的最新版本。比如3.3.4，库会匹配3.x中的最新版本。（作用于版本号的第一个值）后者则是作用域版本号的中间的号。比如3.3.4，库会匹配3.3.x中最新版本。</p>
-<p>/*注：babel-runtime 是 dependencies 而不是 devDependencies。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/07/npm%E5%AD%A6%E4%B9%A0/" data-id="ckdkezj7i00092fnm5uxwaovn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-my-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/31/my-first-blog/" class="article-date">
-  <time datetime="2020-07-31T09:36:06.000Z" itemprop="datePublished">2020-07-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/31/my-first-blog/">my first blog</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/31/my-first-blog/" data-id="ckdkezj7h00082fnm6lu6aia1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/08/07/%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%B0%E5%BD%95/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/07/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/07/vue%E5%AD%A6%E4%B9%A0/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/07/CSS%E5%9F%BA%E7%A1%80/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/07/curl/">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.0.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: {"text":"快,去,学,习,吧,！","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-08-25 03:22:19'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="啊！你找到我啦！" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/niangao.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">12</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/back.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">啊！你找到我啦！</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">啊！你找到我啦！</h1><div id="site_subtitle"><span id="subtitle"></span></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/08/25/archives/vue%E5%85%A8%E5%AE%B6%E6%A1%B6/vue%E5%AD%A6%E4%B9%A0/" title="vue">     <img class="post_bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/08/25/archives/vue%E5%85%A8%E5%AE%B6%E6%A1%B6/vue%E5%AD%A6%E4%B9%A0/" title="vue">vue</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-25T03:21:58.322Z" title="发表于 2020-08-25 03:21:58">2020-08-25</time></span></div><div class="content">vue学习:基本知识：​        -\&#123;&#123;\&#125;&#125;—文本或数据显示的地方，里面只运行js代码，纯js代码也可以运行。
+     -标签有的指令： 
+​                 -v-html—可以显示数据中带有标签的，标签内的部分部分。标签内按照样式显示。
+​                 -v-text—把标签也输出，也没有相应的标签效果。
+​        -v-show=”定义的值“ 值是布尔值 控制一个值的隐藏或显示  。相当于是将相应的display：none。如果需要频繁的切换，使用v-show
+​        - v-if=”定义的值“ 值时boolean 节点的动态创建和删除。相当于是dom中的appendChild（） removeChild（）如果运行时条件很少变换，则使用v-if
+​                -动态切换class的方式，三目写法，对象写法，数组写法（可以任意的切换）    
+​                -v-bind=‘值’ 动态切换class （isActive？‘red’：‘y ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/08/25/about/about/" title="别划走，先来看看我">     <img class="post_bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="别划走，先来看看我"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/08/25/about/about/" title="别划走，先来看看我">别划走，先来看看我</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-08-25T03:21:58.318Z" title="发表于 2020-08-25 03:21:58">2020-08-25</time></span></div><div class="content">自我介绍：  估计也不会有什么人看到，那就算是写给我自己看的吧。本人女，一个喜欢前端，但是还是很菜的一个前端小菜鸡。希望能用博客记录下我平时的一些学习和成长。
+  纯纯狗派，头像就是我家的小美狗啦。它的名字叫年糕，他有有一个超级爱他的主人呢~
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/niangao.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">=_=初级小菜鸡</div><div class="author-info__description">日常记录，一起学习</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">12</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/08/25/archives/vue%E5%85%A8%E5%AE%B6%E6%A1%B6/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/" title="无题"><img class="aside-post-bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/08/25/archives/vue%E5%85%A8%E5%AE%B6%E6%A1%B6/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/" title="无题">无题</a><time class="aside-post_meta post-meta-date" datetime="2020-08-25T03:21:58.322Z" title="发表于 2020-08-25 03:21:58">2020-08-25</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/08/25/archives/linux%E6%8C%87%E4%BB%A4/" title="linux命令"><img class="aside-post-bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux命令"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/08/25/archives/linux%E6%8C%87%E4%BB%A4/" title="linux命令">linux命令</a><time class="aside-post_meta post-meta-date" datetime="2020-08-25T03:21:58.322Z" title="发表于 2020-08-25 03:21:58">2020-08-25</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/08/25/archives/other/curl/" title="curl"><img class="aside-post-bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="curl"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/08/25/archives/other/curl/" title="curl">curl</a><time class="aside-post_meta post-meta-date" datetime="2020-08-25T03:21:58.322Z" title="发表于 2020-08-25 03:21:58">2020-08-25</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/08/25/archives/other/md%E7%9A%84%E4%BD%BF%E7%94%A8/" title="md常用语法总结"><img class="aside-post-bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="md常用语法总结"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/08/25/archives/other/md%E7%9A%84%E4%BD%BF%E7%94%A8/" title="md常用语法总结">md常用语法总结</a><time class="aside-post_meta post-meta-date" datetime="2020-08-25T03:21:58.322Z" title="发表于 2020-08-25 03:21:58">2020-08-25</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/08/25/archives/other/npm%E5%AD%A6%E4%B9%A0/" title="npm学习总结"><img class="aside-post-bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="npm学习总结"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/08/25/archives/other/npm%E5%AD%A6%E4%B9%A0/" title="npm学习总结">npm学习总结</a><time class="aside-post_meta post-meta-date" datetime="2020-08-25T03:21:58.322Z" title="发表于 2020-08-25 03:21:58">2020-08-25</time></div></div></div></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/about-me/" style="font-size: 16px; color: #999">about me</a> <a href="/tags/linux/" style="font-size: 16px; color: #999">linux</a> <a href="/tags/vue%E5%85%A8%E5%AE%B6%E6%A1%B6/" style="font-size: 16px; color: #999">vue全家桶</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E4%B8%89%E5%85%84%E5%BC%9F/" style="font-size: 19px; color: #99a1ac">前端三兄弟</a> <a href="/tags/%E6%9D%82%E9%A1%B9/" style="font-size: 22px; color: #99a9bf">杂项</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">12</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">12</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By =_=初级小菜鸡</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/js/third-party/ClickShowText.js" async="async"></script></div></body></html>
