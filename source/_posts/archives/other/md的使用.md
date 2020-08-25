@@ -4,7 +4,7 @@ tag: 杂项
 ---
 
 
-##<center>md是什么</center>
+<h2><center>md是什么</center></h2>
 
 ---
 &nbsp;&nbsp;md是一种Markdown文件使用的编写语言，轻量级，学习成本中等，但是熟练使用之后会胜过一切文档书写工具。而且md支持书写html和css书写，可以更方便对文章内容的控制。所以，md和博客在一起更配哦~

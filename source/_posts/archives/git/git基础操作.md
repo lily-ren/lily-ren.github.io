@@ -2,7 +2,7 @@
 title: git的基础命令
 tag: git
 ---​  
-##<center>git基础指令</center>
+<h2><center>git基础指令</center></h2>
 
 ---
 
