@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/08/25/archives/vue%E5%85%A8%E5%AE%B6%E6%A1%B6/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</loc>
+    <loc>http://yoursite.com/2020/08/25/archives/linux%E6%8C%87%E4%BB%A4/</loc>
     
     <lastmod>2020-08-25</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/08/25/archives/linux%E6%8C%87%E4%BB%A4/</loc>
+    <loc>http://yoursite.com/2020/08/25/archives/git/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</loc>
     
     <lastmod>2020-08-25</lastmod>
     
@@ -37,6 +37,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2020/08/25/archives/other/%E6%8A%93%E5%8C%85,%E9%80%A0%E5%81%87%E6%95%B0%E6%8D%AE/</loc>
+    
+    <lastmod>2020-08-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/08/25/archives/other/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/</loc>
     
     <lastmod>2020-08-25</lastmod>
@@ -45,6 +52,13 @@
   
   <url>
     <loc>http://yoursite.com/2020/08/25/archives/other/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84/</loc>
+    
+    <lastmod>2020-08-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/08/25/archives/vue%E5%85%A8%E5%AE%B6%E6%A1%B6/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2020-08-25</lastmod>
     
@@ -109,7 +123,21 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/tags/git/</loc>
+    <lastmod>2020-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/%E6%9D%82%E9%A1%B9/</loc>
+    <lastmod>2020-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/vue/</loc>
     <lastmod>2020-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
