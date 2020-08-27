@@ -1,6 +1,6 @@
 ---
 title: git的基础命令
-tag: git
+tag: ./
 ---​  
 <h2><center>git基础指令</center></h2>
 
@@ -116,3 +116,5 @@ tag: git
 *master是git为我们自动创建的第一条分支。
 
 *nvm alias default 8.12.0 //设置默认的node版本（以后都不用改的那种）
+
+![git导图](git.png)
