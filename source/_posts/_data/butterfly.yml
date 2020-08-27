@@ -84,11 +84,11 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/favicon.png
+favicon: https://github.com/lily-ren/hi-blog/blob/master/source/img/back.jpg
 
 # Avatar (頭像)
 avatar:
-  img: /img/niangao.JPG
+  img: https://github.com/lily-ren/hi-blog/blob/master/source/img/niangao.JPG
   effect: false
 
 # the banner image of home page
