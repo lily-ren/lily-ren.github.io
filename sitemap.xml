@@ -2,14 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/08/27/archives/linux%E6%8C%87%E4%BB%A4/</loc>
-    
-    <lastmod>2020-08-27</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/08/27/archives/git/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</loc>
+    <loc>http://yoursite.com/2020/08/27/archives/other/HTTP%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</loc>
     
     <lastmod>2020-08-27</lastmod>
     
@@ -87,6 +80,20 @@
   
   <url>
     <loc>http://yoursite.com/2020/08/27/archives/vue%E5%85%A8%E5%AE%B6%E6%A1%B6/vue%E5%AD%A6%E4%B9%A0/</loc>
+    
+    <lastmod>2020-08-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/08/27/archives/linux%E6%8C%87%E4%BB%A4/</loc>
+    
+    <lastmod>2020-08-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/08/27/archives/git/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</loc>
     
     <lastmod>2020-08-27</lastmod>
     
